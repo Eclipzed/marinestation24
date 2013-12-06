@@ -110,10 +110,10 @@ VOTE_DELAY 6000
 VOTE_PERIOD 600
 
 ## autovote initial delay (deciseconds) before first automatic transfer vote call (default 180 minutes)
-VOTE_AUTOTRANSFER_INITIAL 108000
+VOTE_AUTOTRANSFER_INITIAL -1
 
 ##autovote delay (deciseconds) before sequential automatic transfer votes are called (default 60 minutes)
-VOTE_AUTOTRANSFER_INTERVAL 36000
+VOTE_AUTOTRANSFER_INTERVAL -1
 
 ## prevents dead players from voting or starting votes
 #NO_DEAD_VOTE
@@ -198,7 +198,7 @@ GATEWAY_DELAY 18000
 #CONTINUOUS_ROUNDS
 
 ## Uncomment to restrict non-admins from using humanoid alien races
-USEALIENWHITELIST
+#USEALIENWHITELIST
 
 ## Comment this to unrestrict the number of alien players allowed in the round. The number represents the number of alien players for every human player.
 #ALIEN_PLAYER_RATIO 0.2
