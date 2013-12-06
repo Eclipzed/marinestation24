@@ -104,6 +104,7 @@
 	name = "heavy pulse laser"
 	icon_state = "pulse1_bl"
 	var/life = 20
+	damage = 70
 
 	Bump(atom/A)
 		A.bullet_act(src, def_zone)
