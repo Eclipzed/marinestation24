@@ -78,7 +78,7 @@
 				icon_state = "port2"
 		return
 
-	else if (istype(W, /obj/item/weapon/cable_coil) && opened && !(has_electronics & 2))
+	else if (istype(W, /obj/item/weapon/cable_coil) && opened && (has_electronics & 1))
 		var/obj/item/weapon/cable_coil/C = W
 		if(C.amount < 10)
 			user << "\red You need more wires."
@@ -104,11 +104,11 @@
 			has_electronics &= ~2
 		return
 
-	else if (istype(W, /obj/item/weapon/module/rust_fuel_port) && opened && !(has_electronics & 1))
-		user << "You trying to insert the port control board into the frame..."
+	else if (istype(W, /obj/item/weapon/module/rust_fuel_port) && opened && (has_electronics & 0))
+		user << "You try to insert the port control board into the frame..."
 		playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
 		if(do_after(user, 10))
-			has_electronics &= 1
+			has_electronics = 1
 			user << "You place the port control board inside the frame."
 			del(W)
 		return
