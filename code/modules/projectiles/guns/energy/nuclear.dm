@@ -33,17 +33,17 @@
 
 
 /obj/item/weapon/gun/energy/gun/captain
-	name = "Improved Energy Gun"
-	desc = "A fine-tuned energy-based gun with two settings: Stun and kill."
+	name = "advanced energy pistol"
+	desc = "A powerful, fine-tuned energy pistol with stun and kill settings. Comes with a lovely walnut stock."
 	cell_type = "/obj/item/weapon/cell/high"
-	icon_state = "taser"
+	icon_state = "capenergystun100"
 	item_state = null	//so the human update icon uses the icon_state instead.
 	fire_sound = 'sound/weapons/Taser.ogg'
 
 	charge_cost = 50 //How much energy is needed to fire.
 	projectile_type = "/obj/item/projectile/energy/hvyelectrode"
 	origin_tech = "combat=4;magnets=3"
-	modifystate = "taser"
+	modifystate = "capenergystun"
 
 	attack_self(mob/living/user as mob)
 		switch(mode)
@@ -53,14 +53,14 @@
 				fire_sound = 'sound/weapons/Laser.ogg'
 				user << "\red [src.name] is now set to kill."
 				projectile_type = "/obj/item/projectile/beam"
-				modifystate = "energy"
+				modifystate = "capenergykill"
 			if(1)
 				mode = 0
 				charge_cost = 50
 				fire_sound = 'sound/weapons/Taser.ogg'
 				user << "\red [src.name] is now set to stun."
 				projectile_type = "/obj/item/projectile/energy/hvyelectrode"
-				modifystate = "taser"
+				modifystate = "capenergystun"
 		update_icon()
 
 
