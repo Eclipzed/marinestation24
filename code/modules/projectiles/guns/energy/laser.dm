@@ -28,6 +28,7 @@ obj/item/weapon/gun/energy/laser/retro
 	origin_tech = null
 	var/charge_tick = 0
 	cell_type = "/obj/item/weapon/cell/super"
+	projectile_type = "/obj/item/projectile/beam/heavylaser"
 
 
 	New()
