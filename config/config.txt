@@ -74,13 +74,14 @@ LOG_PDA
 ## 
 ## default probablity is 1, increase to make that mode more likely to be picked
 ## set to 0 to disable that mode
-PROBABILITY EXTENDED 1
+PROBABILITY EXTENDED 3
 PROBABILITY MALFUNCTION 1
 PROBABILITY NUCLEAR 1
 PROBABILITY WIZARD 1
 PROBABILITY CHANGELING 1
-PROBABILITY CULT 1
-PROBABILITY EXTEND-A-TRAITORMONGOUS 6
+PROBABILITY CULT 2
+PROBABILITY HEIST 2
+PROBABILITY EXTEND-A-TRAITORMONGOUS 3
 
 ## Hash out to disable random events during the round.
 ALLOW_RANDOM_EVENTS
@@ -110,10 +111,10 @@ VOTE_DELAY 6000
 VOTE_PERIOD 600
 
 ## autovote initial delay (deciseconds) before first automatic transfer vote call (default 180 minutes)
-VOTE_AUTOTRANSFER_INITIAL -1
+#VOTE_AUTOTRANSFER_INITIAL 108000
 
 ##autovote delay (deciseconds) before sequential automatic transfer votes are called (default 60 minutes)
-VOTE_AUTOTRANSFER_INTERVAL -1
+#VOTE_AUTOTRANSFER_INTERVAL 36000
 
 ## prevents dead players from voting or starting votes
 #NO_DEAD_VOTE
