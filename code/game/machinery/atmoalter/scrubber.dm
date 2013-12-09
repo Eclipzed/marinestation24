@@ -8,7 +8,7 @@
 	var/on = 0
 	var/volume_rate = 800
 
-	volume = 750
+	volume = 1500
 
 /obj/machinery/portable_atmospherics/scrubber/emp_act(severity)
 	if(stat & (BROKEN|NOPOWER))

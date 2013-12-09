@@ -1,6 +1,6 @@
 /obj/item/weapon/gun/energy/gun
-	name = "energy gun"
-	desc = "A basic energy-based gun with two settings: Stun and kill."
+	name = "A716 Energy Pistol"
+	desc = "A common energy weapon used as security enforcement and personal defense. Comes standard with Stun and Kill settings, and a sleek, black finish."
 	icon_state = "energystun100"
 	item_state = null	//so the human update icon uses the icon_state instead.
 	fire_sound = 'sound/weapons/Taser.ogg'
@@ -33,8 +33,8 @@
 
 
 /obj/item/weapon/gun/energy/gun/captain
-	name = "advanced energy pistol"
-	desc = "A powerful, fine-tuned energy pistol with stun and kill settings. Comes with a lovely walnut stock."
+	name = "Bolt 2411"
+	desc = "A true classic. Powerful and deadly, this chromed energy pistol is as much a fine-tuned personal defense weapon as it is a collector's item. Comes with a polished walnut stock."
 	cell_type = "/obj/item/weapon/cell/high"
 	icon_state = "capenergystun100"
 	item_state = null	//so the human update icon uses the icon_state instead.
@@ -44,6 +44,7 @@
 	projectile_type = "/obj/item/projectile/energy/hvyelectrode"
 	origin_tech = "combat=4;magnets=3"
 	modifystate = "capenergystun"
+	w_class = 2.0
 
 	attack_self(mob/living/user as mob)
 		switch(mode)
@@ -65,13 +66,13 @@
 
 
 /obj/item/weapon/gun/energy/gun/nuclear
-	name = "Advanced Energy Gun"
-	desc = "An energy gun with an experimental miniaturized reactor."
+	name = "R407 Nuclear Energy Gun"
+	desc = "An energy gun with an experimental miniaturized reactor. Use with extreme caution, as the containment fields inside the weapon are unstable."
 	icon_state = "nucgun"
 	origin_tech = "combat=3;materials=5;powerstorage=3"
 	var/lightfail = 0
 	var/charge_tick = 0
-	cell_type = "obj/item/weapon/cell/high"
+	cell_type = "/obj/item/weapon/cell/high"
 
 	New()
 		..()

@@ -72,6 +72,7 @@ obj/item/weapon/gun/energy/laser/retro
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 	origin_tech = "combat=4;materials=3;powerstorage=3"
 	projectile_type = "/obj/item/projectile/beam/heavylaser"
+	cell_type = "/obj/item/weapon/cell/super"
 
 	fire_delay = 20
 

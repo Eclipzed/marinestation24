@@ -11,6 +11,7 @@ var/global/list/autolathe_recipes = list( \
 		new /obj/item/weapon/weldingtool(), \
 		new /obj/item/weapon/screwdriver(), \
 		new /obj/item/weapon/wirecutters(), \
+		new /obj/item/weapon/cable_coil(), \
 		new /obj/item/weapon/wrench(), \
 		new /obj/item/clothing/head/welding(), \
 		new /obj/item/weapon/stock_parts/console_screen(), \
@@ -59,7 +60,7 @@ var/global/list/autolathe_recipes_hidden = list( \
 		new /obj/item/ammo_magazine/a357(), \
 		new /obj/item/ammo_casing/shotgun(), \
 		new /obj/item/ammo_casing/shotgun/dart(), \
-		/* new /obj/item/weapon/shield/riot(), */ \
+		new /obj/item/weapon/shield/riot(), \
 	)
 
 /obj/machinery/autolathe

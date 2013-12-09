@@ -150,7 +150,7 @@
 
 // the cable coil object, used for laying cable
 
-#define MAXCOIL 30
+#define MAXCOIL 50
 /obj/item/weapon/cable_coil
 	name = "cable coil"
 	icon = 'icons/obj/power.dmi'
@@ -162,8 +162,8 @@
 	w_class = 2.0
 	throw_speed = 2
 	throw_range = 5
-	m_amt = 50
-	g_amt = 20
+	m_amt = 100
+	g_amt = 40
 	flags = TABLEPASS | FPRINT | CONDUCT
 	slot_flags = SLOT_BELT
 	item_state = "coil_red"

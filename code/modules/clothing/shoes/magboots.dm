@@ -4,6 +4,10 @@
 	icon_state = "magboots0"
 	species_restricted = null
 	var/magpulse = 0
+	origin_tech = "magnets=3;materials=2"
+	g_amt = 200
+	m_amt = 1000
+	var/construction_cost = list("metal"=1000,"glass"=200,"silver"=150)
 //	flags = NOSLIP //disabled by default
 
 
