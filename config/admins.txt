@@ -6,9 +6,9 @@
 ######################################################################
 
 eclipzed - Host
-asdffdsaasdf - Moderator
+asdffdsaasdf - Trial Admin
 kiithnaras - Head Admin
 cschwarz - Game Admin
 shadowdak - Game Admin
-sin4 - Moderator
+sin4 - Trial Admin
 dggnome - Head Admin
