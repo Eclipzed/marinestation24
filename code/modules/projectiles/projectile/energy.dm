@@ -20,7 +20,7 @@
 	//Damage will be handled on the MOB side, to prevent window shattering.
 
 /obj/item/projectile/energy/hvyelectrode
-	name = "hvyelectrode"
+	name = "electrode"
 	icon_state = "spark"
 	nodamage = 1
 	/*

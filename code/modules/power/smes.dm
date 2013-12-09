@@ -1,8 +1,8 @@
 // the SMES
 // stores power
 
-#define SMESMAXCHARGELEVEL 200000
-#define SMESMAXOUTPUT 200000
+#define SMESMAXCHARGELEVEL 250000
+#define SMESMAXOUTPUT 250000
 
 /obj/machinery/power/smes
 	name = "power storage unit"
@@ -14,8 +14,8 @@
 	var/output = 50000
 	var/lastout = 0
 	var/loaddemand = 0
-	var/capacity = 5e6
-	var/charge = 1e6
+	var/capacity = 2e7
+	var/charge = 4e6
 	var/charging = 0
 	var/chargemode = 0
 	var/chargecount = 0
@@ -65,7 +65,7 @@
 
 
 /obj/machinery/power/smes/proc/chargedisplay()
-	return round(5.5*charge/(capacity ? capacity : 5e6))
+	return round(5.5*charge/(capacity ? capacity : 2e7))
 
 #define SMESRATE 0.05			// rate of internal charge to external power
 

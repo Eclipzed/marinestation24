@@ -42,3 +42,32 @@
 			icon_state = "[modifystate][ratio]"
 		else
 			icon_state = "[initial(icon_state)][ratio]"
+
+/obj/item/weapon/gun/energy/attackby(obj/item/W, mob/user)
+
+	if(istype(W, /obj/item/weapon/screwdriver))
+		if(!user)
+			return
+		src.add_fingerprint(user)
+		if(power_supply)
+			user.put_in_hands(power_supply)
+			power_supply.add_fingerprint(user)
+			power_supply.update_icon()
+			src.power_supply = null
+			user.visible_message("\red [user.name] pries the power cell from [src.name].", "You pry the power cell from [src.name].")
+		else
+			user << "The [src.name] already lacks a power cell!"
+			return
+	if(istype(W, /obj/item/weapon/cell))
+		if(power_supply)
+			user << "There is already a power cell installed!"
+		else
+			user.drop_item()
+			W.loc = src
+			power_supply = W
+			user.visible_message(\
+				"\red [user.name] has inserted the power cell to [src.name]!",\
+				"You insert the power cell.")
+			return
+
+	update_icon()
