@@ -1,73 +1,74 @@
-/obj/item/weapon/gun/energy
-	icon_state = "energy"
-	name = "energy gun"
-	desc = "A basic energy-based gun."
-	fire_sound = 'sound/weapons/Taser.ogg'
-
-	var/obj/item/weapon/cell/power_supply //What type of power cell this uses
-	var/charge_cost = 100 //How much energy is needed to fire.
-	var/cell_type = "/obj/item/weapon/cell"
-	var/projectile_type = "/obj/item/projectile/beam/practice"
-	var/modifystate
-
-	emp_act(severity)
-		power_supply.use(round(power_supply.maxcharge / severity))
-		update_icon()
-		..()
+/obj/item/projectile/energy
+	name = "energy"
+	icon_state = "spark"
+	damage = 0
+	damage_type = BURN
+	flag = "energy"
 
 
-	New()
-		..()
-		if(cell_type)
-			power_supply = new cell_type(src)
-		else
-			power_supply = new(src)
-		power_supply.give(power_supply.maxcharge)
-		return
+/obj/item/projectile/energy/electrode
+	name = "electrode"
+	icon_state = "spark"
+	nodamage = 1
+	/*
+	stun = 10
+	weaken = 10
+	stutter = 10
+	*/
+	agony = 40
+	damage_type = HALLOSS
+	//Damage will be handled on the MOB side, to prevent window shattering.
+
+/obj/item/projectile/energy/hvyelectrode
+	name = "electrode"
+	icon_state = "spark"
+	nodamage = 1
+	/*
+	stun = 10
+	weaken = 10
+	stutter = 10
+	*/
+	agony = 60
+	damage_type = HALLOSS
+	//Damage will be handled on the MOB side, to prevent window shattering.
+
+/obj/item/projectile/energy/declone
+	name = "declone"
+	icon_state = "declone"
+	nodamage = 1
+	damage_type = CLONE
+	irradiate = 40
 
 
-	load_into_chamber()
-		if(in_chamber)	return 1
-		if(!power_supply)	return 0
-		if(!power_supply.use(charge_cost))	return 0
-		if(!projectile_type)	return 0
-		in_chamber = new projectile_type(src)
-		return 1
+/obj/item/projectile/energy/dart
+	name = "dart"
+	icon_state = "toxin"
+	damage = 5
+	damage_type = TOX
+	weaken = 5
 
 
-	update_icon()
-		var/ratio = power_supply.charge / power_supply.maxcharge
-		ratio = round(ratio, 0.25) * 100
-		if(modifystate)
-			icon_state = "[modifystate][ratio]"
-		else
-			icon_state = "[initial(icon_state)][ratio]"
+/obj/item/projectile/energy/bolt
+	name = "bolt"
+	icon_state = "cbbolt"
+	damage = 10
+	damage_type = TOX
+	nodamage = 0
+	weaken = 10
+	stutter = 10
 
-/obj/item/weapon/gun/energy/attackby(obj/item/W, mob/user)
 
-	if(istype(W, /obj/item/weapon/screwdriver))
-		if(!user)
-			return
-		src.add_fingerprint(user)
-		if(power_supply)
-			user.put_in_hands(power_supply)
-			power_supply.add_fingerprint(user)
-			power_supply.update_icon()
-			src.power_supply = null
-			user.visible_message("\red [user.name] pries the power cell from [src.name].", "You pry the power cell from [src.name].")
-		else
-			user << "The [src.name] already lacks a power cell!"
-			return
-	if(istype(W, /obj/item/weapon/cell))
-		if(power_supply)
-			user << "There is already a power cell installed!"
-		else
-			user.drop_item()
-			W.loc = src
-			power_supply = W
-			user.visible_message(\
-				"\red [user.name] has inserted the power cell to [src.name]!",\
-				"You insert the power cell.")
-			return
+/obj/item/projectile/energy/bolt/large
+	name = "largebolt"
+	damage = 20
 
-	update_icon()
+
+/obj/item/projectile/energy/neurotoxin
+	name = "neuro"
+	icon_state = "neurotoxin"
+	damage = 5
+	damage_type = TOX
+	weaken = 5
+
+
+
