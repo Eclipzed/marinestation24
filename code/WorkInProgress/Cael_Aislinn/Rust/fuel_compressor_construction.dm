@@ -29,7 +29,7 @@
 	if (A.requires_power == 0 || A.name == "Space")
 		usr << "\red Compressor cannot be placed in this area."
 		return
-	new /obj/machinery/rust_fuel_compressor(loc, ndir, 1)
+	new /obj/machinery/rust_fuel_assembly_port(loc, ndir, 1)
 	del(src)
 
 //construction steps
@@ -65,6 +65,7 @@
 						"\blue You remove the circuitboard board.")
 					has_electronics = 0
 					new /obj/item/weapon/module/rust_fuel_compressor(loc)
+					has_electronics &= ~1
 			else
 				opened = 0
 				icon_state = "fuel_compressor0"
@@ -104,7 +105,7 @@
 					user << "You fail to [ locked ? "unlock" : "lock"] the compressor interface."
 		return
 
-	else if (istype(W, /obj/item/weapon/cable_coil) && opened && (has_electronics & 1))
+	else if (istype(W, /obj/item/weapon/cable_coil) && opened && !(has_electronics & 2))
 		var/obj/item/weapon/cable_coil/C = W
 		if(C.amount < 10)
 			user << "\red You need more wires."
@@ -116,7 +117,7 @@
 			user.visible_message(\
 				"\red [user.name] has added cables to the compressor frame!",\
 				"You add cables to the port frame.")
-			has_electronics = 2
+			has_electronics &= 2
 		return
 
 	else if (istype(W, /obj/item/weapon/wirecutters) && opened && (has_electronics & 2))
@@ -127,14 +128,14 @@
 			user.visible_message(\
 				"\red [user.name] cut the cabling inside the compressor.",\
 				"You cut the cabling inside the port.")
-			has_electronics = 1
+			has_electronics &= ~2
 		return
 
-	else if (istype(W, /obj/item/weapon/module/rust_fuel_compressor) && opened && (has_electronics & 0))
-		user << "You try to insert the circuitboard into the frame..."
+	else if (istype(W, /obj/item/weapon/module/rust_fuel_compressor) && opened && !(has_electronics & 1))
+		user << "You trying to insert the circuitboard into the frame..."
 		playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
 		if(do_after(user, 10))
-			has_electronics = 1
+			has_electronics &= 1
 			user << "You place the circuitboard inside the frame."
 			del(W)
 		return
