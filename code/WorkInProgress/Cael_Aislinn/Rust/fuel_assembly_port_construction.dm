@@ -10,7 +10,7 @@
 
 /obj/item/rust_fuel_assembly_port_frame/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if (istype(W, /obj/item/weapon/wrench))
-		new /obj/item/stack/sheet/plasteel( get_turf(src.loc), 12 )
+		new /obj/item/stack/sheet/plasteel( get_turf(src.loc), 8 )
 		del(src)
 		return
 	..()
@@ -64,10 +64,16 @@
 						"\blue You remove the circuitboard.")
 					has_electronics = 1
 					new /obj/item/weapon/module/rust_fuel_port(loc)
-			else
+		return
+
+	else if (istype(W, /obj/item/weapon/screwdriver))
+		if (opened)
+			if (has_electronics==2)
 				opened = 0
 				icon_state = "port0"
 				user << "\blue You close the maintenance cover."
+			else
+				user << "You you need to finish assembly before closing the maintenance cover."
 		else
 			if(cur_assembly)
 				user << "\red You cannot open the cover while there is a fuel assembly inside."
@@ -113,7 +119,7 @@
 
 	else if (istype(W, /obj/item/weapon/module/rust_fuel_port) && opened)
 		if (has_electronics == 1)
-			user << "You trying to insert the port control board into the frame..."
+			user << "You try to insert the port control board into the frame..."
 			playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
 			if(do_after(user, 10))
 				has_electronics = 2

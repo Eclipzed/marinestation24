@@ -12,7 +12,7 @@
 
 	var/obj/item/weapon/fuel_assembly/cur_assembly
 	var/fuel_usage = 0.0001			//percentage of available fuel to use per cycle
-	var/id_tag = "One"
+	var/id_tag = "Injector1"
 	var/injecting = 0
 	var/trying_to_swap_fuel = 0
 

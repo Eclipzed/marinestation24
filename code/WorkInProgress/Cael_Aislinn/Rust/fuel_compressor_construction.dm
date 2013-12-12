@@ -10,7 +10,7 @@
 
 /obj/item/rust_fuel_compressor_frame/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if (istype(W, /obj/item/weapon/wrench))
-		new /obj/item/stack/sheet/plasteel( get_turf(src.loc), 12 )
+		new /obj/item/stack/sheet/plasteel( get_turf(src.loc), 8 )
 		del(src)
 		return
 	..()
@@ -44,7 +44,7 @@
 		has_electronics = 3
 		opened = 0
 		locked = 0
-		icon_state = "fuel_compressor1"
+		icon_state = "fuel_compressor0"
 
 	//20% easier to read than apc code
 	pixel_x = (dir & 3)? 0 : (dir == 4 ? 32 : -32)
@@ -65,17 +65,24 @@
 						"\blue You remove the circuitboard board.")
 					has_electronics = 1
 					new /obj/item/weapon/module/rust_fuel_compressor(loc)
-			else
+		return
+
+
+	else if (istype(W, /obj/item/weapon/screwdriver))
+		if (opened)
+			if (has_electronics==2)
 				opened = 0
-				icon_state = "fuel_compressor0"
+				icon_state = "fuel_compressor1"
 				user << "\blue You close the maintenance cover."
+			else
+				user << "You you need to finish assembly before closing the maintenance cover."
 		else
-			if(compressed_matter > 0)
-				user << "\red You cannot open the cover while there is compressed matter inside."
+			if(cur_assembly)
+				user << "\red You cannot open the cover while there is a fuel assembly inside."
 			else
 				opened = 1
 				user << "\blue You open the maintenance cover."
-				icon_state = "fuel_compressor1"
+				icon_state = "fuel_compressor0"
 		return
 
 	else if (istype(W, /obj/item/weapon/card/id)||istype(W, /obj/item/device/pda))			// trying to unlock the interface with an ID card
@@ -140,7 +147,7 @@
 
 	else if (istype(W, /obj/item/weapon/module/rust_fuel_compressor) && opened)
 		if (has_electronics == 1)
-			user << "You trying to insert the circuitboard into the frame..."
+			user << "You try to insert the circuitboard into the frame..."
 			playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
 			if(do_after(user, 10))
 				has_electronics = 2
