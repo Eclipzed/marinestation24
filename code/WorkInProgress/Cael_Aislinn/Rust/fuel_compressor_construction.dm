@@ -77,7 +77,7 @@
 			else
 				user << "You you need to finish assembly before closing the maintenance cover."
 		else
-			if(cur_assembly)
+			if(compressed_matter > 0)
 				user << "\red You cannot open the cover while there is a fuel assembly inside."
 			else
 				opened = 1

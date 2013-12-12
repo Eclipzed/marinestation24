@@ -216,12 +216,16 @@ Deuterium-tritium fusion: 4.5 x 10^7 K
 	emp_overload = 0
 	if(new_strength <= 50)
 		calc_size = 1
+		SetLuminosity(3)
 	else if(new_strength <= 200)
 		calc_size = 3
+		SetLuminosity(9)
 	else if(new_strength <= 500)
 		calc_size = 5
+		SetLuminosity(15)
 	else
 		calc_size = 7
+		SetLuminosity(21)
 		if(new_strength > 900)
 			emp_overload = 1
 	//
