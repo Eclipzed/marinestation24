@@ -56,14 +56,14 @@
 		return src.attack_hand(user)
 	if (istype(W, /obj/item/weapon/crowbar))
 		if(opened)
-			if(has_electronics & 1)
+			if(has_electronics == 2)
 				playsound(src.loc, 'sound/items/Crowbar.ogg', 50, 1)
 				user << "You begin removing the circuitboard" //lpeters - fixed grammar issues
 				if(do_after(user, 50))
 					user.visible_message(\
 						"\red [user.name] has removed the circuitboard from [src.name]!",\
 						"\blue You remove the circuitboard board.")
-					has_electronics = 0
+					has_electronics = 1
 					new /obj/item/weapon/module/rust_fuel_compressor(loc)
 			else
 				opened = 0
@@ -104,39 +104,52 @@
 					user << "You fail to [ locked ? "unlock" : "lock"] the compressor interface."
 		return
 
-	else if (istype(W, /obj/item/weapon/cable_coil) && opened && (has_electronics & 1))
-		var/obj/item/weapon/cable_coil/C = W
-		if(C.amount < 10)
-			user << "\red You need more wires."
-			return
-		user << "You start adding cables to the compressor frame..."
-		playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
-		if(do_after(user, 20) && C.amount >= 10)
-			C.use(10)
-			user.visible_message(\
-				"\red [user.name] has added cables to the compressor frame!",\
-				"You add cables to the port frame.")
-			has_electronics = 2
+	else if (istype(W, /obj/item/weapon/cable_coil) && opened)
+		if (has_electronics==0)
+			var/obj/item/weapon/cable_coil/C = W
+			if(C.amount < 10)
+				user << "\red You need more wires."
+				return
+			user << "You start adding cables to the compressor frame..."
+			playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
+			if(do_after(user, 20) && C.amount >= 10)
+				C.use(10)
+				user.visible_message(\
+					"\red [user.name] has added cables to the compressor frame!",\
+					"You add cables to the port frame.")
+				has_electronics = 1
+		else
+			user << "\red This compressor frame already has cables!"
 		return
 
-	else if (istype(W, /obj/item/weapon/wirecutters) && opened && (has_electronics & 2))
-		user << "You begin to cut the cables..."
-		playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
-		if(do_after(user, 50))
-			new /obj/item/weapon/cable_coil(loc,10)
-			user.visible_message(\
-				"\red [user.name] cut the cabling inside the compressor.",\
-				"You cut the cabling inside the port.")
-			has_electronics = 1
+	else if (istype(W, /obj/item/weapon/wirecutters) && opened)
+		if (has_electronics==1)
+			user << "You begin to cut the cables..."
+			playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
+			if(do_after(user, 50))
+				new /obj/item/weapon/cable_coil(loc,10)
+				user.visible_message(\
+					"\red [user.name] cut the cabling inside the compressor.",\
+					"You cut the cabling inside the port.")
+				has_electronics = 0
+		else if (has_electronics == 2)
+			user << "\red You must remove the circuitboard before you can cut the cables!"
+		else
+			user << "\red There are no cables to cut!"
 		return
 
-	else if (istype(W, /obj/item/weapon/module/rust_fuel_compressor) && opened && (has_electronics & 0))
-		user << "You try to insert the circuitboard into the frame..."
-		playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
-		if(do_after(user, 10))
-			has_electronics = 1
-			user << "You place the circuitboard inside the frame."
-			del(W)
+	else if (istype(W, /obj/item/weapon/module/rust_fuel_compressor) && opened)
+		if (has_electronics == 1)
+			user << "You trying to insert the circuitboard into the frame..."
+			playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
+			if(do_after(user, 10))
+				has_electronics = 2
+				user << "You place the circuitboard inside the frame."
+				del(W)
+		else if (has_electronics == 2)
+			user << "There is already a circuit board in this compressor frame!"
+		else
+			user << "You need to wire the frame before inserting a circuit board."
 		return
 
 	else if (istype(W, /obj/item/weapon/weldingtool) && opened && !has_electronics)
