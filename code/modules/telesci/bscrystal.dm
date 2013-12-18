@@ -8,6 +8,7 @@
 	w_class = 1
 	origin_tech = "bluespace=4;materials=3"
 	var/blink_range = 8 // The teleport range when crushed/thrown at someone.
+	var/construction_cost = list("metal"=1000,"glass"=10000,"uranium"=5000,"plasma"=5000,"silver"=2500,"gold"=1000,"adamantine"=500)
 
 /obj/item/bluespace_crystal/New()
 	..()
@@ -36,3 +37,4 @@
 	desc = "An artificially made bluespace crystal, it looks delicate."
 	origin_tech = "bluespace=2"
 	blink_range = 4 // Not as good as the organic stuff!
+	construction_cost = list("metal"=1000,"glass"=5000,"uranium"=1000,"plasma"=5000,"silver"=1000,"gold"=500)
