@@ -6,7 +6,7 @@
 
 	anchored = 1.0
 
-	current_heat_capacity = 1000
+	current_heat_capacity = 2500
 
 	New()
 		..()
@@ -92,7 +92,7 @@
 
 	anchored = 1.0
 
-	current_heat_capacity = 1000
+	current_heat_capacity = 2500
 
 	New()
 		..()
