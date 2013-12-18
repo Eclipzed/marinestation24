@@ -143,6 +143,19 @@
 	name = "Brig floor"        // Also added it into the 2x3 brig area of the shuttle.
 	icon_state = "floor4"
 
+/turf/simulated/shuttle/vox/plating
+	name = "Skipjack Plating"
+	icon = 'icons/turf/floors.dmi'
+	icon_state = "plating"
+	oxygen = 0
+	nitrogen = MOLES_CELLSTANDARD
+
+/turf/simulated/shuttle/vox/floor
+	name = "Skipjack Flooring"
+	icon_state = "floor4"
+	oxygen = 0
+	nitrogen = MOLES_CELLSTANDARD
+
 /turf/simulated/floor/beach
 	name = "Beach"
 	icon = 'icons/misc/beach.dmi'
