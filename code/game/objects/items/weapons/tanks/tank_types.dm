@@ -166,11 +166,38 @@
 /*
  * Nitrogen
  */
+/obj/item/weapon/tank/emergency_nitrogen
+	name = "emergency nitrogen tank"
+	desc = "Used for portable storage of nitrogen. Does not contain large quantities of nitrogen. Use sparingly."
+	icon_state ="emergency_nitrotank"
+	volume = 8
+	slot_flags = SLOT_BELT
+	w_class = 2.0
+	flags =  FPRINT | TABLEPASS | CONDUCT
+	force = 5.0
+	distribute_pressure = ONE_ATMOSPHERE*O2STANDARD
+
 /obj/item/weapon/tank/nitrogen
 	name = "nitrogen tank"
 	desc = "A tank of nitrogen."
 	icon_state = "oxygen_fr"
 	distribute_pressure = ONE_ATMOSPHERE*O2STANDARD
+
+	New()
+		..()
+		src.air_contents.nitrogen = (5*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C)
+		//
+		src.air_contents.update_values()
+
+		return
+
+
+	examine()
+		set src in usr
+		..()
+		if(air_contents.oxygen < 0.2 && loc==usr)
+			usr << text("\red <B>The meter on the [src.name] indicates you are almost out of air!</B>")
+			usr << sound('sound/effects/alert.ogg')
 
 
 /obj/item/weapon/tank/nitrogen/New()
