@@ -223,8 +223,8 @@ obj/machinery/atmospherics/trinary/filter/Topic(href, href_list) // -- TLE
 	if (href_list["temp"])
 		src.temp = null
 	if(href_list["set_press"])
-		var/new_pressure = input(usr,"Enter new output pressure (0-4500kPa)","Pressure control",src.target_pressure) as num
-		src.target_pressure = max(0, min(4500, new_pressure))
+		var/new_pressure = input(usr,"Enter new output pressure (0-6000kPa)","Pressure control",src.target_pressure) as num
+		src.target_pressure = max(0, min(6000, new_pressure))
 	if(href_list["power"])
 		on=!on
 	src.update_icon()

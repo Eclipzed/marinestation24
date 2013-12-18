@@ -56,7 +56,7 @@ obj/machinery/atmospherics/binary/volume_pump
 		var/input_starting_pressure = air1.return_pressure()
 		var/output_starting_pressure = air2.return_pressure()
 
-		if((input_starting_pressure < 0.01) || (output_starting_pressure > 9000))
+		if((input_starting_pressure < 0.01) || (output_starting_pressure > 10000))
 			return 1
 
 		var/transfer_ratio = max(1, transfer_rate/air1.volume)
