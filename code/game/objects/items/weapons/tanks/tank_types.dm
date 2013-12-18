@@ -177,12 +177,6 @@
 	force = 5.0
 	distribute_pressure = ONE_ATMOSPHERE*O2STANDARD
 
-/obj/item/weapon/tank/nitrogen
-	name = "nitrogen tank"
-	desc = "A tank of nitrogen."
-	icon_state = "oxygen_fr"
-	distribute_pressure = ONE_ATMOSPHERE*O2STANDARD
-
 	New()
 		..()
 		src.air_contents.nitrogen = (5*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C)
@@ -195,10 +189,15 @@
 	examine()
 		set src in usr
 		..()
-		if(air_contents.oxygen < 0.2 && loc==usr)
+		if(air_contents.nitrogen < 0.5 && loc==usr)
 			usr << text("\red <B>The meter on the [src.name] indicates you are almost out of air!</B>")
 			usr << sound('sound/effects/alert.ogg')
 
+/obj/item/weapon/tank/nitrogen
+	name = "nitrogen tank"
+	desc = "A tank of nitrogen."
+	icon_state = "oxygen_fr"
+	distribute_pressure = ONE_ATMOSPHERE*O2STANDARD
 
 /obj/item/weapon/tank/nitrogen/New()
 	..()
