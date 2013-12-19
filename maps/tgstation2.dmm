@@ -8141,7 +8141,7 @@
 "daC" = (/obj/structure/window/basic{dir = 1},/obj/structure/table,/obj/item/robot_parts/chest,/turf/simulated/shuttle/vox/floor,/area/shuttle/vox/station)
 "daD" = (/obj/structure/window/basic{dir = 1},/obj/structure/table,/obj/item/weed_extract,/turf/simulated/shuttle/vox/floor,/area/shuttle/vox/station)
 "daE" = (/obj/structure/window/basic{dir = 1},/obj/structure/table,/obj/machinery/bot/floorbot,/turf/simulated/shuttle/vox/floor,/area/shuttle/vox/station)
-"daF" = (/obj/structure/window/basic{dir = 1},/obj/structure/table,/obj/item/broken_device,/turf/simulated/shuttle/vox/floor,/area/shuttle/vox/station)
+"daF" = (/obj/structure/window/basic{dir = 1},/obj/structure/table,/obj/item/broken_device,/obj/item/weapon/tank/emergency_nitrogen,/obj/item/weapon/tank/emergency_nitrogen,/obj/item/weapon/tank/emergency_nitrogen,/obj/item/weapon/tank/emergency_nitrogen,/obj/item/weapon/tank/emergency_nitrogen,/obj/item/weapon/tank/emergency_nitrogen,/obj/item/weapon/tank/emergency_nitrogen,/obj/item/weapon/tank/emergency_nitrogen,/obj/item/weapon/tank/emergency_nitrogen,/obj/item/weapon/tank/emergency_nitrogen,/turf/simulated/shuttle/vox/floor,/area/shuttle/vox/station)
 "daG" = (/obj/machinery/door/airlock/hatch{req_access_txt = "150"},/turf/simulated/shuttle/vox/floor,/area/shuttle/vox/station)
 "daH" = (/obj/structure/table/reinforced,/obj/item/weapon/pickaxe,/obj/item/weapon/storage/firstaid/toxin,/obj/structure/window/basic{dir = 1},/turf/simulated/shuttle/vox/floor,/area/shuttle/vox/station)
 "daI" = (/obj/structure/table/reinforced,/obj/item/weapon/scalpel,/obj/item/weapon/cable_coil,/obj/item/weapon/storage/firstaid/regular,/obj/structure/window/basic{dir = 1},/turf/simulated/shuttle/vox/floor,/area/shuttle/vox/station)
