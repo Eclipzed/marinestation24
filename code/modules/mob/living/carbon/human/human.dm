@@ -31,6 +31,9 @@
 	set_species("Vox")
 	..()
 
+/mob/living/carbon/human/vox/movement_delay()
+	return -2 //Birds move very fast! Usually loaded down with heavy things, though.
+
 /mob/living/carbon/human/diona/New()
 	species = new /datum/species/diona(src)
 	..()

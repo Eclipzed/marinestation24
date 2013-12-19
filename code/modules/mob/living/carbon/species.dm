@@ -101,6 +101,11 @@
 	icobase = 'icons/mob/human_races/r_vox.dmi'
 	deform = 'icons/mob/human_races/r_def_vox.dmi'
 	language = "Vox-pidgin"
+	punch_damage = 5
+	attack_verb = "scratch"
+
+	hazard_high_pressure = 800
+	warning_high_pressure = 500
 
 	warning_low_pressure = 50
 	hazard_low_pressure = 0
@@ -108,6 +113,10 @@
 	cold_level_1 = 80
 	cold_level_2 = 50
 	cold_level_3 = 0
+
+	heat_level_1 = 600
+	heat_level_2 = 900
+	heat_level_3 = 1200
 
 	eyes = "vox_eyes_s"
 	breath_type = "nitrogen"
