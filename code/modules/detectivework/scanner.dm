@@ -68,8 +68,10 @@
 		if(!proximity) return
 		if(loc != user)
 			return
+
 		if(istype(A,/obj/machinery/computer/forensic_scanning)) //breaks shit.
 			return
+
 		if(istype(A,/obj/item/weapon/f_card))
 			user << "The scanner displays on the screen: \"ERROR 43: Object on Excluded Object List.\""
 			flick("forensic0",src)
@@ -78,8 +80,8 @@
 		add_fingerprint(user)
 
 
-		//Special case for blood splaters.
-		if (istype(A, /obj/effect/decal/cleanable/blood) || istype(A, /obj/effect/rune))
+		//Special case for blood splaters, runes, and gibs.
+		if (istype(A, /obj/effect/decal/cleanable/blood) || istype(A, /obj/effect/rune) || istype(A, /obj/effect/decal/cleanable/blood/gibs))
 			if(!isnull(A.blood_DNA))
 				for(var/blood in A.blood_DNA)
 					user << "\blue Blood type: [A.blood_DNA[blood]]\nDNA: [blood]"
