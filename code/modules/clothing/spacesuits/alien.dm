@@ -208,7 +208,7 @@
 	species_restricted = list("Vox")
 
 	toggle()
-		set name = "Toggle Floor Grip"
+		//set name = "Toggle Floor Grip"
 		if(usr.stat)
 			return
 		if(src.magpulse)
