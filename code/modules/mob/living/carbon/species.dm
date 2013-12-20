@@ -121,7 +121,7 @@
 	eyes = "vox_eyes_s"
 	breath_type = "nitrogen"
 
-	flags = NO_SCAN
+	flags = WHITELISTED | HAS_TAIL
 
 /datum/species/diona
 	name = "Diona"
