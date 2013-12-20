@@ -32,8 +32,17 @@
 
 	if(shock_stage >= 10) tally += 3
 
-	if(species == "Vox")
+	if(istype(src, /mob/living/carbon/human/vox))
 		tally -= 2
+
+	if(istype(src, /mob/living/carbon/human/tajaran))
+		tally -= 1
+
+	if(istype(src, /mob/living/carbon/human/unathi))
+		tally -= 1
+
+	if(istype(src, /mob/living/carbon/human/skrell))
+		tally += 1
 
 	if(FAT in src.mutations)
 		tally += 1.5
