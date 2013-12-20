@@ -32,6 +32,9 @@
 
 	if(shock_stage >= 10) tally += 3
 
+	if(species == "Vox")
+		tally -= 2
+
 	if(FAT in src.mutations)
 		tally += 1.5
 	if (bodytemperature < 283.222)
