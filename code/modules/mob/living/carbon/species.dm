@@ -102,7 +102,8 @@
 	deform = 'icons/mob/human_races/r_def_vox.dmi'
 	language = "Vox-pidgin"
 	punch_damage = 5
-	attack_verb = "scratch"
+	attack_verb = list("scratch","slash","slice")
+	darksight = 5
 
 	hazard_high_pressure = 800
 	warning_high_pressure = 500
