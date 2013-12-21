@@ -1,10 +1,12 @@
-<h1>Welcome to Marine Station 24!</h1>
+<h1>Welcome to Mariner Station 24!</h1>
 
 -<i>This server is running a modification of <a href="http://baystation12.net/">Baystation 12's</a> modification of the <a href="http://ss13.eu/">/tg/station13</a> SS13 code. It is a direct fork off of the Baystation 12. Much of the credit goes to their awesome and amazing team.</i>
 <br><br>
 <strong>Bugtracker:</strong> <a href="http://baystation12.net/forums/viewtopic.php?f=18&t=8185">http://baystation12.net/forums/viewtopic.php?f=18&t=8185</a>
 <br><br>
 Our group has been inspired by Baystation 12. Most of the admins are current ARMA 2/3 24th Marine Expeditionary Unit (MEU) members, and are pretty cool dudes.
-We only have one core rule, here: Be Excellent to each other (OOC). Stay appropriate in-character, no powergamey, metagamey, or douchey behaviour will be tolerated. This is your first and only warning. We do not have forums or other methods of out-of-game contact. If you receive punitive action, address it at an appropriate time if you feel it was unjust.
+<br><b>It is important to note:</b> Despite our origins, MS24 itself does not endorse military-style roleplay. We're here to enjoy SS13.
+<br>We only have one core rule, here: Be Excellent to each other (OOC). Stay appropriate in-character, no powergamey, metagamey, or douchey behaviour will be tolerated. This is your first and only warning. We do not have forums or other methods of out-of-game contact. If you receive punitive action, address it at an appropriate time if you feel it was unjust.
+<br>In general, if you follow the guidlines <b><a href="http://baystation12.net/wiki/index.php?title=Rules>HERE</b></a>, everything will be just grand. You may certainly discuss and request help from the admins. We love feedback, but not demands.
 
-<h1>Man up and deal with it.</h1>
+<h2>Man up and deal with it.</h2>
