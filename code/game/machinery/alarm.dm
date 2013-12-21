@@ -828,6 +828,7 @@ Toxins: <span class='dl[plasma_dangerlevel]'>[plasma_percent]</span>%<br>
 <B>[long_name]</B>[state]<BR>
 <B>Operating:</B>
 <A href='?src=\ref[src];id_tag=[id_tag];command=power;val=[!data["power"]]'>[data["power"]?"on":"off"]</A>
+<A href='?src=\ref[src];id_tag=[id_tag];command=direction;val=[!data["direction"]]'>[data["direction"]?"release":"siphon"]</A>
 <BR>
 <B>Pressure checks:</B>
 <A href='?src=\ref[src];id_tag=[id_tag];command=checks;val=[data["checks"]^1]' [(data["checks"]&1)?"style='font-weight:bold;'":""]>external</A>
