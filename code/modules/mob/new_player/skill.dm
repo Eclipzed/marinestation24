@@ -189,9 +189,10 @@ mob/living/carbon/human/proc/GetSkillClass(points)
 			return "Exceptional"
 		if(19 to 24)
 			return "Genius"
-		if(24 to 1000)
-			return "God"
-
+		if(25 to 50)
+			return "Superhuman"
+		if(51 to 1000)
+			return "Mary Sue"
 
 proc/show_skill_window(var/mob/user, var/mob/living/carbon/human/M)
 	if(!istype(M)) return
