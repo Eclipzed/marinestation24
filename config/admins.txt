@@ -6,9 +6,11 @@
 ######################################################################
 
 eclipzed - Host
-asdffdsaasdf - Game Admin
+asdffdsaasdf - Head Admin
 kiithnaras - Head Admin
 cschwarz - Game Admin
 shadowdak - Game Admin
 sin4 - Trial Admin
 dggnome - Trial Admin
+
+# Made harmless change to my admin rank, as a test.
