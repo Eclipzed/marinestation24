@@ -12,10 +12,10 @@
 		return 1
 
 
-/obj/item/projectile/bullet/gyro
+/obj/item/projectile/bullet/gyro //Big motherfuckin' bullet!
 	name ="explosive bolt"
 	icon_state= "bolter"
-	damage = 50
+	damage = 75
 	flag = "bullet"
 
 

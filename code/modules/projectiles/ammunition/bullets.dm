@@ -1,7 +1,7 @@
 /obj/item/ammo_casing/a357
 	desc = "A .357 bullet casing."
 	caliber = "357"
-	projectile_type = "/obj/item/projectile/bullet"
+	projectile_type = "/obj/item/projectile/midbullet2"
 
 /obj/item/ammo_casing/a50
 	desc = "A .50AE bullet casing."
@@ -35,19 +35,19 @@
 /obj/item/ammo_casing/c9mm
 	desc = "A 9mm bullet casing."
 	caliber = "9mm"
-	projectile_type = "/obj/item/projectile/bullet/midbullet2"
+	projectile_type = "/obj/item/projectile/bullet/midbullet"
 
 
 /obj/item/ammo_casing/c45
 	desc = "A .45 bullet casing."
 	caliber = ".45"
-	projectile_type = "/obj/item/projectile/bullet/midbullet"
+	projectile_type = "/obj/item/projectile/bullet/midbullet2"
 
 
 /obj/item/ammo_casing/a12mm
 	desc = "A 12mm bullet casing."
 	caliber = "12mm"
-	projectile_type = "/obj/item/projectile/bullet/midbullet2"
+	projectile_type = "/obj/item/projectile/bullet"
 
 
 /obj/item/ammo_casing/shotgun
@@ -56,7 +56,7 @@
 	icon_state = "gshell"
 	caliber = "shotgun"
 	projectile_type = "/obj/item/projectile/bullet"
-	m_amt = 12500
+	m_amt = 1250
 
 
 /obj/item/ammo_casing/shotgun/blank
@@ -80,7 +80,7 @@
 	desc = "A stunning shell."
 	icon_state = "stunshell"
 	projectile_type = "/obj/item/projectile/bullet/stunshot"
-	m_amt = 2500
+	m_amt = 250
 
 
 /obj/item/ammo_casing/shotgun/dart
@@ -88,7 +88,7 @@
 	desc = "A dart for use in shotguns."
 	icon_state = "dart"
 	projectile_type = "/obj/item/projectile/energy/dart"
-	m_amt = 12500
+	m_amt = 3500
 
 /obj/item/ammo_casing/a762
 	desc = "A 7.62 bullet casing."
