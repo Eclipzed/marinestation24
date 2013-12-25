@@ -102,7 +102,7 @@
 	deform = 'icons/mob/human_races/r_def_vox.dmi'
 	language = "Vox-pidgin"
 	punch_damage = 5
-	attack_verb = list("scratch","slash","slice")
+	attack_verb = "slash"
 	darksight = 5
 
 	hazard_high_pressure = 800
@@ -121,6 +121,8 @@
 
 	eyes = "vox_eyes_s"
 	breath_type = "nitrogen"
+
+	primitive = /mob/living/simple_animal/parrot
 
 	flags = WHITELISTED | HAS_TAIL
 
