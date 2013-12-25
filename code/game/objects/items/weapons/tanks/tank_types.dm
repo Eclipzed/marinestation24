@@ -170,7 +170,7 @@
 	name = "emergency nitrogen tank"
 	desc = "Used for portable storage of nitrogen. Does not contain large quantities of nitrogen. Use sparingly."
 	icon_state ="emergency_nitrotank"
-	volume = 8
+	volume = 12
 	slot_flags = SLOT_BELT
 	w_class = 2.0
 	flags =  FPRINT | TABLEPASS | CONDUCT
@@ -179,7 +179,7 @@
 
 	New()
 		..()
-		src.air_contents.nitrogen = (5*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C)
+		src.air_contents.nitrogen = (8*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C)
 		//
 		src.air_contents.update_values()
 

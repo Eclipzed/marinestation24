@@ -77,6 +77,7 @@
 	desc = "When you absolutely, positively need a 10mm hole in the other guy. Uses .357 ammo."	//>10mm hole >.357
 	icon_state = "mateba"
 	origin_tech = "combat=2;materials=2"
+	caliber = "357"
 
 // A gun to play Russian Roulette!
 // You can spin the chamber to randomize the position of the bullet.
@@ -86,6 +87,7 @@
 	desc = "A Russian made revolver. Uses .357 ammo. It has a single slot in it's chamber for a bullet."
 	max_shells = 6
 	origin_tech = "combat=2;materials=2"
+	caliber = "357"
 
 /obj/item/weapon/gun/projectile/russian/New()
 	Spin()
