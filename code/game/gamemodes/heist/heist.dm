@@ -87,7 +87,7 @@ var/global/vox_kills = 0 //Used to check the Inviolate.
 		raider.current.loc = raider_spawn[index]
 		index++
 
-		var/sounds = rand(2,8)
+		var/sounds = rand(3,8)
 		var/i = 0
 		var/newname = ""
 
