@@ -65,11 +65,14 @@
 		return
 
 	if(powerc(75,1))//Can't plant eggs on spess tiles. That's silly.
-		adjustToxLoss(-75)
 		for(var/mob/O in viewers(src, null))
-			O.show_message(text("\green <B>[src] has laid an egg!</B>"), 1)
-		new /obj/effect/alien/egg(loc)
-	return
+			O.show_message(text("\green <B>[src] squats and starts to contort!</B>"), 1)
+		if(do_after(src,60))
+			adjustToxLoss(-75)
+			for(var/mob/O in viewers(src, null))
+				O.show_message(text("\green <B>[src] has laid an egg!</B>"), 1)
+			new /obj/effect/alien/egg(loc)
+		return
 
 
 /mob/living/carbon/alien/humanoid/queen/large

@@ -828,6 +828,8 @@ Toxins: <span class='dl[plasma_dangerlevel]'>[plasma_percent]</span>%<br>
 <B>[long_name]</B>[state]<BR>
 <B>Operating:</B>
 <A href='?src=\ref[src];id_tag=[id_tag];command=power;val=[!data["power"]]'>[data["power"]?"on":"off"]</A>
+<BR>
+<B>Direction:</B>
 <A href='?src=\ref[src];id_tag=[id_tag];command=direction;val=[!data["direction"]]'>[data["direction"]?"release":"siphon"]</A>
 <BR>
 <B>Pressure checks:</B>
@@ -845,12 +847,6 @@ Toxins: <span class='dl[plasma_dangerlevel]'>[plasma_percent]</span>%<br>
 <A href='?src=\ref[src];id_tag=[id_tag];command=adjust_external_pressure;val=+100'>+</A>
 <A href='?src=\ref[src];id_tag=[id_tag];command=adjust_external_pressure;val=+1000'>+</A>
 <A href='?src=\ref[src];id_tag=[id_tag];command=set_external_pressure;val=[ONE_ATMOSPHERE]'> (reset) </A>
-<BR>
-"}
-					if (data["direction"] == "siphon")
-						sensor_data += {"
-<B>Direction:</B>
-siphoning
 <BR>
 "}
 					sensor_data += {"<HR>"}

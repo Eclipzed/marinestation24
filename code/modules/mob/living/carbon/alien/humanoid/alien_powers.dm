@@ -24,11 +24,14 @@ Doesn't work on other aliens/AI.*/
 	set category = "Alien"
 
 	if(powerc(50,1))
-		adjustToxLoss(-50)
 		for(var/mob/O in viewers(src, null))
-			O.show_message(text("\green <B>[src] has planted some alien weeds!</B>"), 1)
-		new /obj/effect/alien/weeds/node(loc)
-	return
+			O.show_message(text("\green <B>[src] is planting something!</B>"), 1)
+		if(do_after(src,30))
+			adjustToxLoss(-50)
+			for(var/mob/O in viewers(src, null))
+				O.show_message(text("\green <B>[src] has planted some alien weeds!</B>"), 1)
+			new /obj/effect/alien/weeds/node(loc)
+		return
 
 /*
 /mob/living/carbon/alien/humanoid/verb/ActivateHuggers()
@@ -155,22 +158,25 @@ Doesn't work on other aliens/AI.*/
 	set category = "Alien"
 
 	if(powerc(75))
-		var/choice = input("Choose what you wish to shape.","Resin building") as null|anything in list("resin door","resin wall","resin membrane","resin nest") //would do it through typesof but then the player choice would have the type path and we don't want the internal workings to be exposed ICly - Urist
-		if(!choice || !powerc(75))	return
-		adjustToxLoss(-75)
-		src << "\green You shape a [choice]."
 		for(var/mob/O in viewers(src, null))
-			O.show_message(text("\red <B>[src] vomits up a thick purple substance and begins to shape it!</B>"), 1)
-		switch(choice)
-			if("resin door")
-				new /obj/structure/mineral_door/resin(loc)
-			if("resin wall")
-				new /obj/effect/alien/resin/wall(loc)
-			if("resin membrane")
-				new /obj/effect/alien/resin/membrane(loc)
-			if("resin nest")
-				new /obj/structure/stool/bed/nest(loc)
-	return
+			O.show_message(text("\red <B>[src] starts retching violently!</B>"), 1)
+		if(do_after(src,50))
+			var/choice = input("Choose what you wish to shape.","Resin building") as null|anything in list("resin door","resin wall","resin membrane","resin nest") //would do it through typesof but then the player choice would have the type path and we don't want the internal workings to be exposed ICly - Urist
+			if(!choice || !powerc(75))	return
+			adjustToxLoss(-75)
+			src << "\green You shape a [choice]."
+			for(var/mob/O in viewers(src, null))
+				O.show_message(text("\red <B>[src] vomits up a thick purple substance and begins to shape it!</B>"), 1)
+			switch(choice)
+				if("resin door")
+					new /obj/structure/mineral_door/resin(loc)
+				if("resin wall")
+					new /obj/effect/alien/resin/wall(loc)
+				if("resin membrane")
+					new /obj/effect/alien/resin/membrane(loc)
+				if("resin nest")
+					new /obj/structure/stool/bed/nest(loc)
+		return
 
 /mob/living/carbon/alien/humanoid/verb/regurgitate()
 	set name = "Regurgitate"
