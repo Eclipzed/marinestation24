@@ -7,6 +7,7 @@
 
 	proc
 		process_hud(var/mob/M)	return
+	species_restricted = null
 
 
 

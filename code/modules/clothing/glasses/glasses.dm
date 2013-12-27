@@ -9,6 +9,7 @@
 	//var/darkness_view = 0//Base human is 2
 	//var/invisa_view = 0
 	var/prescription = 0
+	species_restricted = list("exclude","Vox")
 
 /obj/item/clothing/glasses/meson
 	name = "Optical Meson Scanner"
@@ -48,6 +49,8 @@
 	desc = "Such a dapper eyepiece!"
 	icon_state = "monocle"
 	item_state = "headset" // lol
+	flags = null
+	species_restricted = null
 
 /obj/item/clothing/glasses/material
 	name = "Optical Material Scanner"
@@ -90,6 +93,7 @@
 	item_state = "welding-g"
 	icon_action_button = "action_welding_g"
 	var/up = 0
+	species_restricted = null
 
 /obj/item/clothing/glasses/welding/attack_self()
 	toggle()
@@ -150,6 +154,30 @@
 		src.hud = new/obj/item/clothing/glasses/hud/security(src)
 		return
 
+/obj/item/clothing/glasses/sunglasses/sechud/vox
+	name = "Vox Security Goggles"
+	desc = "Security HUD goggles designed for Vox"
+	icon_state = "sunhud-vox"
+	item_state = "sunhud-vox"
+	item_color = "sunhud-vox"
+	species_restricted = list("Vox")
+
+/obj/item/clothing/glasses/sunglasses/supervox
+	name = "Augmented Reality Goggles"
+	desc = "Augmented reality goggles specially fitted for Vox"
+	icon_state = "superhud-vox"
+	item_state = "superhud-vox"
+	item_color = "superhud-vox"
+	species_restricted = list("Vox")
+	vision_flags = SEE_MOBS
+	invisa_view = 2
+	var/obj/item/clothing/glasses/hud/security/hud = null
+
+	New()
+		..()
+		src.hud = new/obj/item/clothing/glasses/hud/security(src)
+		return
+
 /obj/item/clothing/glasses/thermal
 	name = "Optical Thermal Scanner"
 	desc = "Thermals in the shape of glasses."
@@ -179,18 +207,21 @@
 
 /obj/item/clothing/glasses/thermal/monocle
 	name = "Thermoncle"
-	desc = "A monocle thermal."
+	desc = "A monocle thermal specially fitted for Vox."
 	icon_state = "thermoncle"
 	flags = null //doesn't protect eyes because it's a monocle, duh
+	species_restricted = list("Vox")
 
 /obj/item/clothing/glasses/thermal/eyepatch
 	name = "Optical Thermal Eyepatch"
 	desc = "An eyepatch with built-in thermal optics"
 	icon_state = "eyepatch"
 	item_state = "eyepatch"
+	species_restricted = null
 
 /obj/item/clothing/glasses/thermal/jensen
 	name = "Optical Thermal Implants"
 	desc = "A set of implantable lenses designed to augment your vision"
 	icon_state = "thermalimplants"
 	item_state = "syringe_kit"
+	species_restricted = null

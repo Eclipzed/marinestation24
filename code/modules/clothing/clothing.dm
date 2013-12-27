@@ -125,7 +125,7 @@ BLIND     // can't see anything
 	body_parts_covered = HANDS
 	slot_flags = SLOT_GLOVES
 	attack_verb = list("challenged")
-	species_restricted = list("exclude","Unathi","Tajaran")
+	species_restricted = list("exclude","Unathi","Tajaran","Vox")
 
 /obj/item/clothing/gloves/examine()
 	set src in usr
@@ -173,7 +173,7 @@ BLIND     // can't see anything
 
 	permeability_coefficient = 0.50
 	slowdown = SHOES_SLOWDOWN
-	species_restricted = list("exclude","Unathi","Tajaran")
+	species_restricted = list("exclude","Unathi","Tajaran","Vox")
 
 //Suit
 /obj/item/clothing/suit
@@ -186,6 +186,7 @@ BLIND     // can't see anything
 	slot_flags = SLOT_OCLOTHING
 	var/blood_overlay_type = "suit"
 	siemens_coefficient = 0.9
+
 
 //Spacesuit
 //Note: Everything in modules/clothing/spacesuits should have the entire suit grouped together.
@@ -241,6 +242,7 @@ BLIND     // can't see anything
 		*/
 	var/obj/item/clothing/tie/hastie = null
 	var/displays_id = 1
+	species_restricted = list("exclude","Vox")
 
 /obj/item/clothing/under/attackby(obj/item/I, mob/user)
 	if(!hastie && istype(I, /obj/item/clothing/tie))

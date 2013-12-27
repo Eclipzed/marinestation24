@@ -195,7 +195,30 @@
 	icon_state = "vox-uniform"
 	item_color = "vox-uniform"
 	item_state = "vox-uniform"
-	has_sensor = 1
+	has_sensor = 2
+	sensor_mode = 3
+	species_restricted = list("Vox")
+
+/obj/item/clothing/under/vox/vox_uniform/head
+	name = "vox nanotrasen head's uniform"
+	desc = "NanoTrasen uniform for Vox Head-of-Staff employees."
+	icon_state = "vox-uniform-head"
+	item_color = "vox-uniform-head"
+	item_state = "vox-uniform-head"
+
+/obj/item/clothing/under/vox/vox_uniform/sec
+	name = "vox nanotrasen head's uniform"
+	desc = "NanoTrasen uniform for Vox Security employees."
+	icon_state = "vox-uniform-sec"
+	item_color = "vox-uniform-sec"
+	item_state = "vox-uniform-sec"
+
+/obj/item/clothing/under/vox/vox_uniform/captain
+	name = "vox nanotrasen captain's uniform"
+	desc = "NanoTrasen uniform for Vox Captain employees."
+	icon_state = "vox-uniform-cap"
+	item_color = "vox-uniform-cap"
+	item_state = "vox-uniform-cap"
 
 /obj/item/clothing/gloves/yellow/vox
 	desc = "These bizarre gauntlets seem to be fitted for... bird claws?"
@@ -205,6 +228,42 @@
 	siemens_coefficient = 0
 	permeability_coefficient = 0.05
 	item_color="gloves-vox"
+	species_restricted = list("Vox")
+
+/obj/item/clothing/gloves/latex/vox
+	desc = "These Vox gauntlets have been coated with a heavy layer of latex for medical procedures."
+	name = "latex gauntlets"
+	icon_state = "gloves-vox-med"
+	item_state = "gloves-vox-med"
+	item_color = "gloves-vox-med"
+	siemens_coefficient = 0.1
+	permeability_coefficient = 0.01
+	species_restricted = list("Vox")
+
+/obj/item/clothing/gloves/black/vox
+	desc = "These Vox gauntlets have been darkened and repurposed for security uses."
+	name = "black gauntlets"
+	icon_state = "gloves-vox-sec"
+	item_state = "gloves-vox-sec"
+	item_color = "gloves-vox-sec"
+	species_restricted = list("Vox")
+
+/obj/item/clothing/gloves/captain/vox
+	desc = "These Vox gauntlets have been trimmed and colored for the station befitting a Qui-er, I mean, Captain."
+	name = "captain gauntlets"
+	icon_state = "gloves-vox-cap"
+	item_state = "gloves-vox-cap"
+	item_color = "gloves-vox-cap"
+	species_restricted = list("Vox")
+	siemens_coefficient = 0
+	permeability_coefficient = 0.05
+
+/obj/item/clothing/shoes/sandals/vox
+	desc = "These are sturdy, solid wooden platforms of wood fitted with straps. They seem to have plenty of wear from claws."
+	name = "vox clogs"
+	icon_state = "clogs-vox"
+	item_state = "clogs-vox"
+	item_color = "clogs-vox"
 	species_restricted = list("Vox")
 
 /obj/item/clothing/shoes/magboots/vox
