@@ -165,7 +165,6 @@
 		return
 
 
-
 /obj/structure/closet/secure_closet/security
 	name = "Security Officer's Locker"
 	req_access = list(access_security)
@@ -201,6 +200,41 @@
 		new /obj/item/clothing/under/rank/security/corp(src)
 		return
 
+/obj/structure/closet/secure_closet/security/voxarmor
+	name = "Vox Carapace Armor"
+	desc = "The label reads: For Use with Vox Security personell."
+	req_access = list(access_armory)
+	icon_state = "secure1"
+	icon_closed = "secure"
+	icon_locked = "secure1"
+	icon_opened = "secureopen"
+	icon_broken = "securebroken"
+	icon_off = "secureoff"
+
+	New()
+		..()
+		sleep(2)
+		new /obj/item/clothing/suit/space/vox/carapace(src)
+		new /obj/item/clothing/head/helmet/space/vox/carapace(src)
+		new /obj/item/weapon/tank/nitrogen(src)
+		new /obj/item/clothing/suit/space/vox/carapace(src)
+		new /obj/item/clothing/head/helmet/space/vox/carapace(src)
+		new /obj/item/weapon/tank/nitrogen(src)
+		new /obj/item/clothing/suit/space/vox/carapace(src)
+		new /obj/item/clothing/head/helmet/space/vox/carapace(src)
+		new /obj/item/weapon/tank/nitrogen(src)
+		new /obj/item/clothing/suit/space/vox/carapace(src)
+		new /obj/item/clothing/head/helmet/space/vox/carapace(src)
+		new /obj/item/weapon/tank/nitrogen(src)
+		new /obj/item/clothing/tie/armband(src)
+		new /obj/item/clothing/tie/holster/waist(src)
+		new /obj/item/clothing/tie/armband(src)
+		new /obj/item/clothing/tie/holster/waist(src)
+		new /obj/item/clothing/tie/armband(src)
+		new /obj/item/clothing/tie/holster/waist(src)
+		new /obj/item/clothing/tie/armband(src)
+		new /obj/item/clothing/tie/holster/waist(src)
+		return
 
 /obj/structure/closet/secure_closet/security/cargo
 
