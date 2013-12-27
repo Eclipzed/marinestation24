@@ -59,9 +59,6 @@
 		contents = list()
 		sleep(1)
 		new /obj/item/clothing/mask/breath/vox(src)
-		new /obj/item/clothing/under/vox/vox_uniform(src)
-		new /obj/item/clothing/shoes/magboots/vox(src)
-		new /obj/item/clothing/gloves/yellow/vox(src)
 		new /obj/item/weapon/tank/emergency_nitrogen(src)
 		new /obj/item/weapon/storage/pill_bottle/antitox(src)
 		return
