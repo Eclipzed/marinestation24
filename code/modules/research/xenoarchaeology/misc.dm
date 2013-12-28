@@ -81,6 +81,29 @@
 		new /obj/item/weapon/storage/box/excavation(src)
 		return
 
+/obj/structure/closet/secure_closet/voxarch
+	name = "Vox Archeology Suits"
+	req_access = list(access_tox_storage)
+	icon_state = "secureres1"
+	icon_closed = "secureres"
+	icon_locked = "secureres1"
+	icon_opened = "secureresopen"
+	icon_broken = "secureresbroken"
+	icon_off = "secureresoff"
+
+	New()
+		..()
+		sleep(2)
+		new /obj/item/clothing/suit/space/vox/pressure(src)
+		new /obj/item/clothing/head/helmet/space/vox/pressure(src)
+		new /obj/item/weapon/tank/nitrogen(src)
+		new /obj/item/clothing/suit/space/vox/pressure(src)
+		new /obj/item/clothing/head/helmet/space/vox/pressure(src)
+		new /obj/item/weapon/tank/nitrogen(src)
+		new /obj/item/clothing/suit/space/vox/pressure(src)
+		new /obj/item/clothing/head/helmet/space/vox/pressure(src)
+		new /obj/item/weapon/tank/nitrogen(src)
+
 /obj/structure/closet/excavation
 	name = "Excavation tools"
 	icon_state = "toolcloset"

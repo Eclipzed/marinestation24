@@ -50,7 +50,28 @@
 		new /obj/item/clothing/mask/breath/medical(src)
 		return
 
+/obj/structure/closet/secure_closet/voxmedeva
+	name = "Vox Medical EVA Suits"
+	req_access = list(access_medical)
+	icon_state = "securemed1"
+	icon_closed = "securemed"
+	icon_locked = "securemed1"
+	icon_opened = "securemedopen"
+	icon_broken = "securemedbroken"
+	icon_off = "securemedoff"
 
+	New()
+		..()
+		sleep(2)
+		new /obj/item/clothing/suit/space/vox/medic(src)
+		new /obj/item/clothing/head/helmet/space/vox/medic(src)
+		new /obj/item/clothing/suit/space/vox/medic(src)
+		new /obj/item/clothing/head/helmet/space/vox/medic(src)
+		new /obj/item/clothing/suit/space/vox/medic(src)
+		new /obj/item/clothing/head/helmet/space/vox/medic(src)
+		new /obj/item/weapon/tank/nitrogen(src)
+		new /obj/item/weapon/tank/nitrogen(src)
+		new /obj/item/weapon/tank/nitrogen(src)
 
 /obj/structure/closet/secure_closet/medical3
 	name = "Medical Doctor's Locker"

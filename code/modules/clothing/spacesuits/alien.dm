@@ -146,7 +146,7 @@
 	icon_state = "vox-stealth"
 	item_state = "vox-stealth"
 	desc = "A smoothly contoured, matte-black alien helmet."
-	armor = list(melee = 50, bullet = 50, laser = 50, energy = 25, bomb = 50, bio = 75, rad = 100)
+	armor = list(melee = 60, bullet = 55, laser = 50, energy = 25, bomb = 50, bio = 75, rad = 100)
 
 /obj/item/clothing/suit/space/vox/stealth
 	name = "alien stealth suit"
@@ -197,11 +197,10 @@
 	item_state = "vox-uniform"
 	has_sensor = 2
 	sensor_mode = 3
-	species_restricted = list("Vox")
 
 /obj/item/clothing/under/vox/vox_uniform/head
 	name = "vox nanotrasen head's uniform"
-	desc = "NanoTrasen uniform for Vox Head-of-Staff employees."
+	desc = "NanoTrasen uniform for Vox department head employees."
 	icon_state = "vox-uniform-head"
 	item_color = "vox-uniform-head"
 	item_state = "vox-uniform-head"
@@ -219,6 +218,13 @@
 	icon_state = "vox-uniform-cap"
 	item_color = "vox-uniform-cap"
 	item_state = "vox-uniform-cap"
+
+/obj/item/clothing/under/vox/vox_uniform/medical
+	name = "vox nanotrasen captain's uniform"
+	desc = "NanoTrasen uniform for Vox medical and research staff employees."
+	icon_state = "vox-uniform-med"
+	item_color = "vox-uniform-med"
+	item_state = "vox-uniform-med"
 
 /obj/item/clothing/gloves/yellow/vox
 	desc = "These bizarre gauntlets seem to be fitted for... bird claws?"
@@ -258,7 +264,7 @@
 	siemens_coefficient = 0
 	permeability_coefficient = 0.05
 
-/obj/item/clothing/shoes/sandals/vox
+/obj/item/clothing/shoes/sandal/vox
 	desc = "These are sturdy, solid wooden platforms of wood fitted with straps. They seem to have plenty of wear from claws."
 	name = "vox clogs"
 	icon_state = "clogs-vox"

@@ -1045,6 +1045,11 @@ proc/process_ghost_teleport_locs()
 	icon_state = "medbay"
 	music = 'sound/ambience/signal.ogg'
 
+/area/medical/voxcryo
+	name = "\improper Auxiliary Cryogenics Lab"
+	icon_state = "medbay3"
+	music = 'sound/ambience/signal.ogg'
+
 //Medbay is a large area, these additional areas help level out APC load.
 /area/medical/medbay2
 	name = "\improper Medbay"

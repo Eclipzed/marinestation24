@@ -8,6 +8,7 @@
 	gas_transfer_coefficient = 0.10
 	permeability_coefficient = 0.50
 	var/hanging = 0
+	species_restricted = list("exclude","Vox")
 
 	verb/toggle()
 		set category = "Object"
@@ -43,6 +44,7 @@
 	icon_state = "voxmask"
 	item_state = "voxmask"
 	permeability_coefficient = 0.01
+	species_restricted = list("Vox")
 
 	toggle()
 		set category = "Object"

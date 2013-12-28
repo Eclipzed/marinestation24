@@ -37,6 +37,22 @@
 	new /obj/item/weapon/pickaxe(src)
 	new /obj/item/clothing/glasses/meson(src)
 
+/obj/structure/closet/secure_closet/miner/vox
+	name = "Vox mining EVA gear"
+
+	New()
+		..()
+		sleep(2)
+		new /obj/item/clothing/suit/space/vox/pressure(src)
+		new /obj/item/clothing/head/helmet/space/vox/pressure(src)
+		new /obj/item/weapon/tank/nitrogen(src)
+		new /obj/item/clothing/suit/space/vox/pressure(src)
+		new /obj/item/clothing/head/helmet/space/vox/pressure(src)
+		new /obj/item/weapon/tank/nitrogen(src)
+		new /obj/item/clothing/suit/space/vox/pressure(src)
+		new /obj/item/clothing/head/helmet/space/vox/pressure(src)
+		new /obj/item/weapon/tank/nitrogen(src)
+
 
 /**********************Shuttle Computer**************************/
 
