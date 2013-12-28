@@ -23,10 +23,17 @@ Doesn't work on other aliens/AI.*/
 	set desc = "Plants some alien weeds"
 	set category = "Alien"
 
+	if(locate(/obj/effect/alien/weeds/node) in get_turf(src))
+		src << "There is already a weed bulb here."
+		return
+
 	if(powerc(50,1))
 		for(var/mob/O in viewers(src, null))
 			O.show_message(text("\green <B>[src] is planting something!</B>"), 1)
 		if(do_after(src,30))
+			if(locate(/obj/effect/alien/weeds/node) in get_turf(src))
+				src << "There is already a weed bulb here."
+				return
 			adjustToxLoss(-50)
 			for(var/mob/O in viewers(src, null))
 				O.show_message(text("\green <B>[src] has planted some alien weeds!</B>"), 1)
@@ -157,12 +164,19 @@ Doesn't work on other aliens/AI.*/
 	set desc = "Secrete tough malleable resin."
 	set category = "Alien"
 
+	if(locate(/obj/effect/alien/resin || /obj/structure/mineral_door/resin || /obj/structure/stool/bed/nest) in get_turf(src))
+		src << "There is already a resin structure here"
+		return
+
 	if(powerc(75))
 		for(var/mob/O in viewers(src, null))
 			O.show_message(text("\red <B>[src] starts retching violently!</B>"), 1)
+		var/choice = input("Choose what you wish to shape.","Resin building") as null|anything in list("resin door","resin wall","resin membrane","resin nest") //would do it through typesof but then the player choice would have the type path and we don't want the internal workings to be exposed ICly - Urist
+		if(!choice || !powerc(75))	return
 		if(do_after(src,50))
-			var/choice = input("Choose what you wish to shape.","Resin building") as null|anything in list("resin door","resin wall","resin membrane","resin nest") //would do it through typesof but then the player choice would have the type path and we don't want the internal workings to be exposed ICly - Urist
-			if(!choice || !powerc(75))	return
+			if(locate(/obj/effect/alien/resin || /obj/structure/mineral_door/resin || /obj/structure/stool/bed/nest) in get_turf(src))
+				src << "There is already a resin structure here"
+				return
 			adjustToxLoss(-75)
 			src << "\green You shape a [choice]."
 			for(var/mob/O in viewers(src, null))

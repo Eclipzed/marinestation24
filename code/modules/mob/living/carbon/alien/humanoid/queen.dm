@@ -68,6 +68,9 @@
 		for(var/mob/O in viewers(src, null))
 			O.show_message(text("\green <B>[src] squats and starts to contort!</B>"), 1)
 		if(do_after(src,60))
+			if(locate(/obj/effect/alien/egg) in get_turf(src))
+				src << "There's already an egg here."
+				return
 			adjustToxLoss(-75)
 			for(var/mob/O in viewers(src, null))
 				O.show_message(text("\green <B>[src] has laid an egg!</B>"), 1)
