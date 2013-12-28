@@ -9,6 +9,7 @@
 	heat_protection = UPPER_TORSO|LOWER_TORSO
 	max_heat_protection_temperature = ARMOR_MAX_HEAT_PROTECITON_TEMPERATURE
 	siemens_coefficient = 0.6
+	species_restricted = list("exclude","Vox")
 
 
 /obj/item/clothing/suit/armor/vest
