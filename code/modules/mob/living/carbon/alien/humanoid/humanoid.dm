@@ -49,7 +49,9 @@
 
 /mob/living/carbon/alien/humanoid/movement_delay()
 	var/tally = 0
-	if (istype(src, /mob/living/carbon/alien/humanoid/queen))
+	if (istype(src, /mob/living/carbon/alien/humanoid/queen/large))
+		tally += -1
+	if (istype(src, /mob/living/carbon/alien/humanoid/queen) && !istype(src, /mob/living/carbon/alien/humanoid/queen/large))
 		tally += 5
 	if (istype(src, /mob/living/carbon/alien/humanoid/drone))
 		tally += 2
