@@ -28,12 +28,10 @@
 			if(3) H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel_eng(H), slot_back)
 			if(4) H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel(H), slot_back)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/chief_engineer(H), slot_w_uniform)
-		H.equip_to_slot_or_del(new /obj/item/device/pda/heads/ce(H), slot_l_store)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/brown(H), slot_shoes)
 		H.equip_to_slot_or_del(new /obj/item/clothing/head/hardhat/white(H), slot_head)
-		H.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/utility/full(H), slot_belt)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/gloves/black(H), slot_gloves)
-		if(istype(H, /mob/living/carbon/human/vox))
+		if(H.species == "vox" || H.species == "Vox")
 			H.equip_to_slot_or_del(new /obj/item/clothing/under/vox/vox_uniform/head(H), slot_w_uniform)
 			H.equip_to_slot_or_del(new /obj/item/clothing/shoes/magboots/vox(H), slot_shoes)
 			H.equip_to_slot_or_del(new /obj/item/clothing/gloves/black/vox(H), slot_gloves)
@@ -59,6 +57,8 @@
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/engineer(H), slot_r_hand)
 			else
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/engineer(H.back), slot_in_backpack)
+		H.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/utility/full(H), slot_belt)
+		H.equip_to_slot_or_del(new /obj/item/device/pda/heads/ce(H), slot_l_store)
 		return 1
 
 
@@ -86,11 +86,8 @@
 			if(4) H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel(H), slot_back)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/engineer(H), slot_w_uniform)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/orange(H), slot_shoes)
-		H.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/utility/full(H), slot_belt)
 		H.equip_to_slot_or_del(new /obj/item/clothing/head/hardhat(H), slot_head)
-		H.equip_to_slot_or_del(new /obj/item/device/t_scanner(H), slot_r_store)
-		H.equip_to_slot_or_del(new /obj/item/device/pda/engineering(H), slot_l_store)
-		if(istype(H, /mob/living/carbon/human/vox))
+		if(H.species == "vox" || H.species == "Vox")
 			H.equip_to_slot_or_del(new /obj/item/clothing/under/vox/vox_uniform(H), slot_w_uniform)
 			H.equip_to_slot_or_del(new /obj/item/clothing/shoes/magboots/vox(H), slot_shoes)
 			if(H.backbag == 1)
@@ -104,6 +101,9 @@
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/engineer(H), slot_r_hand)
 			else
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/engineer(H.back), slot_in_backpack)
+		H.equip_to_slot_or_del(new /obj/item/device/t_scanner(H), slot_r_store)
+		H.equip_to_slot_or_del(new /obj/item/device/pda/engineering(H), slot_l_store)
+		H.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/utility/full(H), slot_belt)
 		return 1
 
 
@@ -130,9 +130,7 @@
 			if(4) H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel(H), slot_back)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/atmospheric_technician(H), slot_w_uniform)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/black(H), slot_shoes)
-		H.equip_to_slot_or_del(new /obj/item/device/pda/atmos(H), slot_l_store)
-		H.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/utility/atmostech/(H), slot_belt)
-		if(istype(H, /mob/living/carbon/human/vox))
+		if(H.species == "vox" || H.species == "Vox")
 			H.equip_to_slot_or_del(new /obj/item/clothing/under/vox/vox_uniform(H), slot_w_uniform)
 			H.equip_to_slot_or_del(new /obj/item/clothing/shoes/magboots/vox(H), slot_shoes)
 			if(H.backbag == 1)
@@ -146,4 +144,6 @@
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/engineer(H), slot_r_hand)
 			else
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/engineer(H.back), slot_in_backpack)
+		H.equip_to_slot_or_del(new /obj/item/device/pda/atmos(H), slot_l_store)
+		H.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/utility/atmostech/(H), slot_belt)
 		return 1

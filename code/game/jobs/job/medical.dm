@@ -26,11 +26,10 @@
 			if(4) H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel(H), slot_back)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/chief_medical_officer(H), slot_w_uniform)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/brown(H), slot_shoes)
-		H.equip_to_slot_or_del(new /obj/item/device/pda/heads/cmo(H), slot_belt)
 		H.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/labcoat/cmo(H), slot_wear_suit)
 		H.equip_to_slot_or_del(new /obj/item/weapon/storage/firstaid/adv(H), slot_l_hand)
 		H.equip_to_slot_or_del(new /obj/item/device/flashlight/pen(H), slot_s_store)
-		if(istype(H, /mob/living/carbon/human/vox))
+		if(H.species == "vox" || H.species == "Vox")
 			if(H.backbag == 1)
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/vox(H), slot_r_hand)
 			else
@@ -38,8 +37,14 @@
 			H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sandal/vox(H), slot_shoes)
 			H.equip_to_slot_or_del(new /obj/item/clothing/under/vox/vox_uniform/head(H), slot_w_uniform)
 			H.equip_to_slot_or_del(new /obj/item/clothing/gloves/latex/vox(H), slot_gloves)
-			H.equip_to_slot_or_del(new /obj/item/clothing/suit/space/vox/medic(H), slot_in_backpack)
-			H.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/space/vox/medic(H), slot_in_backpack)
+			H.equip_to_slot_or_del(new /obj/item/clothing/suit/space/vox/medic(H.back), slot_in_backpack)
+			H.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/space/vox/medic(H.back), slot_in_backpack)
+			var/obj/item/weapon/implant/loyalty/L = new/obj/item/weapon/implant/loyalty(H)
+			L.imp_in = H
+			L.implanted = 1
+			var/datum/organ/external/affected = H.organs_by_name["head"]
+			affected.implants += L
+			L.part = affected
 		else
 			if(H.backbag == 1)
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/survival(H), slot_r_hand)
@@ -47,6 +52,7 @@
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/survival(H.back), slot_in_backpack)
 			H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/chief_medical_officer(H), slot_w_uniform)
 			H.equip_to_slot_or_del(new /obj/item/clothing/shoes/brown(H), slot_shoes)
+		H.equip_to_slot_or_del(new /obj/item/device/pda/heads/cmo(H), slot_belt)
 		return 1
 
 
@@ -71,7 +77,7 @@
 			if(2) H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/medic(H), slot_back)
 			if(3) H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel_med(H), slot_back)
 			if(4) H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel(H), slot_back)
-		if(istype(H, /mob/living/carbon/human/vox))
+		if(H.species == "vox" || H.species == "Vox")
 			H.equip_to_slot_or_del(new /obj/item/clothing/under/vox/vox_uniform/medical(H), slot_w_uniform)
 			H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sandal/vox(H), slot_shoes)
 			H.equip_to_slot_or_del(new /obj/item/clothing/gloves/latex/vox(H), slot_gloves)
@@ -157,9 +163,8 @@
 		H.equip_to_slot_or_del(new /obj/item/device/radio/headset/headset_med(H), slot_l_ear)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/chemist(H), slot_w_uniform)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/white(H), slot_shoes)
-		H.equip_to_slot_or_del(new /obj/item/device/pda/chemist(H), slot_belt)
 		H.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/labcoat/chemist(H), slot_wear_suit)
-		if(istype(H, /mob/living/carbon/human/vox))
+		if(H.species == "vox" || H.species == "Vox")
 			H.equip_to_slot_or_del(new /obj/item/clothing/under/vox/vox_uniform/medical(H), slot_w_uniform)
 			H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sandal/vox(H), slot_shoes)
 			H.equip_to_slot_or_del(new /obj/item/clothing/gloves/latex/vox(H), slot_gloves)
@@ -174,6 +179,7 @@
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/survival(H), slot_r_hand)
 			else
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/survival(H.back), slot_in_backpack)
+		H.equip_to_slot_or_del(new /obj/item/device/pda/chemist(H), slot_belt)
 		return 1
 
 
@@ -196,9 +202,8 @@
 		H.equip_to_slot_or_del(new /obj/item/device/radio/headset/headset_medsci(H), slot_l_ear)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/geneticist(H), slot_w_uniform)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/white(H), slot_shoes)
-		H.equip_to_slot_or_del(new /obj/item/device/pda/geneticist(H), slot_belt)
 		H.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/labcoat/genetics(H), slot_wear_suit)
-		if(istype(H, /mob/living/carbon/human/vox))
+		if(H.species == "vox" || H.species == "Vox")
 			H.equip_to_slot_or_del(new /obj/item/clothing/under/vox/vox_uniform/medical(H), slot_w_uniform)
 			H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sandal/vox(H), slot_shoes)
 			H.equip_to_slot_or_del(new /obj/item/clothing/gloves/latex/vox(H), slot_gloves)
@@ -213,6 +218,7 @@
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/survival(H), slot_r_hand)
 			else
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/survival(H.back), slot_in_backpack)
+		H.equip_to_slot_or_del(new /obj/item/device/pda/geneticist(H), slot_belt)
 		return 1
 
 /*/datum/job/virologist
@@ -270,11 +276,10 @@
 			if(3) H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel_med(H), slot_back)
 			if(4) H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel(H), slot_back)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/medical(H), slot_w_uniform)
-		H.equip_to_slot_or_del(new /obj/item/device/pda/medical(H), slot_belt)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/white(H), slot_shoes)
 		H.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/labcoat(H), slot_wear_suit)
 		H.equip_to_slot_or_del(new /obj/item/device/flashlight/pen(H), slot_s_store)
-		if(istype(H, /mob/living/carbon/human/vox))
+		if(H.species == "vox" || H.species == "Vox")
 			H.equip_to_slot_or_del(new /obj/item/clothing/under/vox/vox_uniform/medical(H), slot_w_uniform)
 			H.equip_to_slot_or_del(new /obj/item/clothing/shoes/sandal/vox(H), slot_shoes)
 			H.equip_to_slot_or_del(new /obj/item/clothing/gloves/latex/vox(H), slot_gloves)
@@ -289,4 +294,5 @@
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/survival(H), slot_r_hand)
 			else
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/survival(H.back), slot_in_backpack)
+		H.equip_to_slot_or_del(new /obj/item/device/pda/medical(H), slot_belt)
 		return 1

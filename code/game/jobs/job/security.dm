@@ -28,12 +28,11 @@
 		H.equip_to_slot_or_del(new /obj/item/device/radio/headset/heads/hos(H), slot_l_ear)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/head_of_security(H), slot_w_uniform)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/jackboots(H), slot_shoes)
-		H.equip_to_slot_or_del(new /obj/item/device/pda/heads/hos(H), slot_belt)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/gloves/black(H), slot_gloves)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/mask/gas(H), slot_wear_mask) //Grab one from the armory you donk
 //		H.equip_to_slot_or_del(new /obj/item/clothing/glasses/sunglasses/sechud(H), slot_glasses)
 		H.equip_to_slot_or_del(new /obj/item/weapon/gun/energy/gun(H), slot_s_store)
-		if(istype(H, /mob/living/carbon/human/vox))
+		if(H.species == "vox" || H.species == "Vox")
 			if(H.backbag == 1)
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/vox(H), slot_r_hand)
 				H.equip_to_slot_or_del(new /obj/item/weapon/handcuffs(H), slot_l_store)
@@ -58,6 +57,7 @@
 			else
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/survival(H.back), slot_in_backpack)
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/handcuffs(H.back), slot_in_backpack)
+		H.equip_to_slot_or_del(new /obj/item/device/pda/heads/hos(H), slot_belt)
 		var/obj/item/weapon/implant/loyalty/L = new/obj/item/weapon/implant/loyalty(H)
 		L.imp_in = H
 		L.implanted = 1
@@ -90,12 +90,10 @@
 			if(4) H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel(H), slot_back)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/warden(H), slot_w_uniform)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/jackboots(H), slot_shoes)
-		H.equip_to_slot_or_del(new /obj/item/device/pda/warden(H), slot_belt)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/gloves/black(H), slot_gloves)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/glasses/sunglasses/sechud(H), slot_glasses)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/mask/gas(H), slot_wear_mask) //Grab one from the armory you donk
-		H.equip_to_slot_or_del(new /obj/item/device/flash(H), slot_l_store)
-		if(istype(H, /mob/living/carbon/human/vox))
+		if(H.species == "vox" || H.species == "Vox")
 			if(H.backbag == 1)
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/vox(H), slot_r_hand)
 				H.equip_to_slot_or_del(new /obj/item/weapon/handcuffs(H), slot_l_store)
@@ -120,6 +118,8 @@
 		else
 			H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/survival(H.back), slot_in_backpack)
 			H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/handcuffs(H.back), slot_in_backpack)
+		H.equip_to_slot_or_del(new /obj/item/device/flash(H), slot_l_store)
+		H.equip_to_slot_or_del(new /obj/item/device/pda/warden(H), slot_belt)
 		return 1
 
 
@@ -148,12 +148,11 @@
 			if(4) H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel(H), slot_back)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/under/det(H), slot_w_uniform)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/brown(H), slot_shoes)
-		H.equip_to_slot_or_del(new /obj/item/device/pda/detective(H), slot_belt)
 /*		var/obj/item/clothing/mask/cigarette/CIG = new /obj/item/clothing/mask/cigarette(H)
 		CIG.light("")
 		H.equip_to_slot_or_del(CIG, slot_wear_mask)	*/
 //		H.equip_to_slot_or_del(new /obj/item/clothing/gloves/black(H), slot_gloves)
-		if(istype(H, /mob/living/carbon/human/vox))
+		if(H.species == "vox" || H.species == "Vox")
 			if(H.backbag == 1)
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/vox(H), slot_r_hand)
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/evidence(H), slot_l_hand)
@@ -179,6 +178,7 @@
 		else
 			H.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/det_suit(H), slot_wear_suit)
 			H.equip_to_slot_or_del(new /obj/item/clothing/head/det_hat(H), slot_head)
+		H.equip_to_slot_or_del(new /obj/item/device/pda/detective(H), slot_belt)
 		return 1
 
 
@@ -204,10 +204,7 @@
 			if(4) H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel(H), slot_back)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/security(H), slot_w_uniform)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/jackboots(H), slot_shoes)
-		H.equip_to_slot_or_del(new /obj/item/device/pda/security(H), slot_belt)
-		H.equip_to_slot_or_del(new /obj/item/weapon/handcuffs(H), slot_s_store)
-		H.equip_to_slot_or_del(new /obj/item/device/flash(H), slot_l_store)
-		if(istype(H, /mob/living/carbon/human/vox))
+		if(H.species == "vox" || H.species == "Vox")
 			if(H.backbag == 1)
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/vox(H), slot_r_hand)
 				H.equip_to_slot_or_del(new /obj/item/weapon/handcuffs(H), slot_l_store)
@@ -226,5 +223,8 @@
 				H.equip_to_slot_or_del(new /obj/item/weapon/handcuffs(H), slot_l_hand)
 			else
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/survival(H.back), slot_in_backpack)
-				H.equip_to_slot_or_del(new /obj/item/weapon/handcuffs(H), slot_l_store)
+				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/handcuffs(H.back), slot_in_backpack)
+		H.equip_to_slot_or_del(new /obj/item/device/pda/security(H), slot_belt)
+		H.equip_to_slot_or_del(new /obj/item/weapon/handcuffs(H), slot_s_store)
+		H.equip_to_slot_or_del(new /obj/item/device/flash(H), slot_l_store)
 		return 1
