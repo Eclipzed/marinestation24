@@ -32,7 +32,7 @@
 //		H.equip_to_slot_or_del(new /obj/item/clothing/mask/gas(H), slot_wear_mask) //Grab one from the armory you donk
 //		H.equip_to_slot_or_del(new /obj/item/clothing/glasses/sunglasses/sechud(H), slot_glasses)
 		H.equip_to_slot_or_del(new /obj/item/weapon/gun/energy/gun(H), slot_s_store)
-		if(H.species == "vox" || H.species == "Vox")
+		if(H.species.name == "Vox")
 			if(H.backbag == 1)
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/vox(H), slot_r_hand)
 				H.equip_to_slot_or_del(new /obj/item/weapon/handcuffs(H), slot_l_store)
@@ -93,7 +93,7 @@
 //		H.equip_to_slot_or_del(new /obj/item/clothing/gloves/black(H), slot_gloves)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/glasses/sunglasses/sechud(H), slot_glasses)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/mask/gas(H), slot_wear_mask) //Grab one from the armory you donk
-		if(H.species == "vox" || H.species == "Vox")
+		if(H.species.name == "Vox")
 			if(H.backbag == 1)
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/vox(H), slot_r_hand)
 				H.equip_to_slot_or_del(new /obj/item/weapon/handcuffs(H), slot_l_store)
@@ -152,7 +152,7 @@
 		CIG.light("")
 		H.equip_to_slot_or_del(CIG, slot_wear_mask)	*/
 //		H.equip_to_slot_or_del(new /obj/item/clothing/gloves/black(H), slot_gloves)
-		if(H.species == "vox" || H.species == "Vox")
+		if(H.species.name == "Vox")
 			if(H.backbag == 1)
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/vox(H), slot_r_hand)
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/evidence(H), slot_l_hand)
@@ -204,7 +204,7 @@
 			if(4) H.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/satchel(H), slot_back)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/security(H), slot_w_uniform)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/jackboots(H), slot_shoes)
-		if(H.species == "vox" || H.species == "Vox")
+		if(H.species.name == "Vox")
 			if(H.backbag == 1)
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/vox(H), slot_r_hand)
 				H.equip_to_slot_or_del(new /obj/item/weapon/handcuffs(H), slot_l_store)

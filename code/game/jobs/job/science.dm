@@ -26,7 +26,7 @@
 //		H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/research_director(H), slot_w_uniform)
 		H.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/labcoat(H), slot_wear_suit)
 		H.equip_to_slot_or_del(new /obj/item/weapon/clipboard(H), slot_l_hand)
-		if(H.species == "vox" || H.species == "Vox")
+		if(H.species.name == "Vox")
 			if(H.backbag == 1)
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/vox(H), slot_r_hand)
 			else
@@ -70,7 +70,7 @@
 //		H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/scientist(H), slot_w_uniform)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/white(H), slot_shoes)
 		H.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/labcoat/science(H), slot_wear_suit)
-		if(H.species == "vox" || H.species == "Vox")
+		if(H.species.name == "Vox")
 			if(H.backbag == 1)
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/vox(H), slot_r_hand)
 			else
@@ -107,7 +107,7 @@
 //		H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/scientist(H), slot_w_uniform)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/shoes/white(H), slot_shoes)
 		H.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/labcoat/science(H), slot_wear_suit)
-		if(H.species == "vox" || H.species == "Vox")
+		if(H.species.name == "Vox")
 			if(H.backbag == 1)
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/vox(H), slot_r_hand)
 			else
@@ -148,7 +148,7 @@
 		H.equip_to_slot_or_del(new /obj/item/clothing/suit/storage/labcoat(H), slot_wear_suit)
 //		H.equip_to_slot_or_del(new /obj/item/clothing/gloves/black(H), slot_gloves)
 		H.equip_to_slot_or_del(new /obj/item/weapon/storage/toolbox/mechanical(H), slot_l_hand)
-		if(H.species == "vox" || H.species == "Vox")
+		if(H.species.name == "Vox")
 			if(H.backbag == 1)
 				H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/vox(H), slot_r_hand)
 			else
