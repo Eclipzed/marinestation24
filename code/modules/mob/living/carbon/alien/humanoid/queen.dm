@@ -78,10 +78,38 @@
 		return
 
 
-/mob/living/carbon/alien/humanoid/queen/large
+/mob/living/carbon/alien/humanoid/queen/large //Made this one a HUGE pain
 	icon = 'icons/mob/alienqueen.dmi'
 	icon_state = "queen_s"
 	pixel_x = -16
+	maxHealth = 600
+	health = 600
+	heal_rate = 10
+	plasma_rate = 30
+	storedPlasma = 750
+	max_plasma = 1000
+
+	handle_regular_hud_updates()
+
+		..() //-Yvarov
+
+		if (src.healths)
+			if (src.stat != 2)
+				switch(health)
+					if(600 to INFINITY)
+						src.healths.icon_state = "health0"
+					if(450 to 600)
+						src.healths.icon_state = "health1"
+					if(300 to 450)
+						src.healths.icon_state = "health2"
+					if(150 to 300)
+						src.healths.icon_state = "health3"
+					if(0 to 150)
+						src.healths.icon_state = "health4"
+					else
+						src.healths.icon_state = "health5"
+			else
+				src.healths.icon_state = "health6"
 
 /mob/living/carbon/alien/humanoid/queen/large/update_icons()
 	lying_prev = lying	//so we don't update overlays for lying/standing unless our stance changes again
