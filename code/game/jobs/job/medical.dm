@@ -53,6 +53,7 @@
 			H.equip_to_slot_or_del(new /obj/item/clothing/under/rank/chief_medical_officer(H), slot_w_uniform)
 			H.equip_to_slot_or_del(new /obj/item/clothing/shoes/brown(H), slot_shoes)
 		H.equip_to_slot_or_del(new /obj/item/device/pda/heads/cmo(H), slot_belt)
+		H.equip_to_slot_or_del(new /obj/item/device/healthanalyzer(H.back), slot_in_backpack)
 		return 1
 
 

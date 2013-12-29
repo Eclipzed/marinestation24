@@ -162,7 +162,7 @@
 	item_color = "sunhud-vox"
 	species_restricted = list("Vox")
 
-/obj/item/clothing/glasses/sunglasses/supervox
+/obj/item/clothing/glasses/sunglasses/sechud/supervox
 	name = "Augmented Reality Goggles"
 	desc = "Augmented reality goggles specially fitted for Vox"
 	icon_state = "superhud-vox"
@@ -171,12 +171,6 @@
 	species_restricted = list("Vox")
 	vision_flags = SEE_MOBS
 	invisa_view = 2
-	var/obj/item/clothing/glasses/hud/security/hud = null
-
-	New()
-		..()
-		src.hud = new/obj/item/clothing/glasses/hud/security(src)
-		return
 
 /obj/item/clothing/glasses/thermal
 	name = "Optical Thermal Scanner"
@@ -209,6 +203,13 @@
 	name = "Thermoncle"
 	desc = "A monocle thermal specially fitted for Vox."
 	icon_state = "thermoncle"
+	flags = null //doesn't protect eyes because it's a monocle, duh
+	species_restricted = list("Vox")
+
+/obj/item/clothing/glasses/meson/monocle
+	name = "Mesonocle"
+	desc = "A monocle meson scanner specially fitted for Vox."
+	icon_state = "mesonocle"
 	flags = null //doesn't protect eyes because it's a monocle, duh
 	species_restricted = list("Vox")
 

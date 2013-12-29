@@ -29,7 +29,7 @@
 		if(H.species.name == "Vox")
 			H.equip_to_slot_or_del(new /obj/item/clothing/under/vox/vox_uniform/captain(H), slot_w_uniform)
 			H.equip_to_slot_or_del(new /obj/item/clothing/gloves/captain/vox(H), slot_gloves)
-			H.equip_to_slot_or_del(new /obj/item/clothing/glasses/sunglasses/supervox(H), slot_glasses)
+			H.equip_to_slot_or_del(new /obj/item/clothing/glasses/sunglasses/sechud/supervox(H), slot_glasses)
 			H.equip_to_slot_or_del(new /obj/item/clothing/shoes/magboots/vox(H), slot_shoes)
 			H.equip_to_slot_or_del(new /obj/item/weapon/storage/box/vox(H.back), slot_in_backpack)
 			H.equip_to_slot_or_del(new /obj/item/clothing/suit/space/vox/stealth(H.back), slot_in_backpack)
