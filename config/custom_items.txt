@@ -1,6 +1,5 @@
 ckey: name: /path/to/obj
 
-kiithnaras: Yachakakichiya: /obj/item/weapon/storage/box/vox
 asdffdsaasdf: Sam Williams: /obj/item/clothing/glasses/hud/security/jensenshades
 asdffdsaasdf: Sam Williams: /obj/item/clothing/under/rank/head_of_security/jensen
 asdffdsaasdf: Sam Williams: /obj/item/clothing/suit/armor/hos/jensen
