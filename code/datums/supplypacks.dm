@@ -144,12 +144,56 @@ var/list/all_supply_groups = list("Operations","Security","Hospitality","Enginee
 	contains = list(/obj/item/clothing/mask/gas,
 					/obj/item/clothing/mask/gas,
 					/obj/item/clothing/mask/gas,
-					/obj/item/weapon/tank/air,
-					/obj/item/weapon/tank/air,
-					/obj/item/weapon/tank/air)
+					/obj/item/weapon/tank/oxygen,
+					/obj/item/weapon/tank/oxygen,
+					/obj/item/weapon/tank/oxygen)
 	cost = 10
 	containertype = /obj/structure/closet/crate/internals
 	containername = "Internals crate"
+	group = "Engineering"
+
+/datum/supply_packs/voxuniforms
+	name = "Vox Uniform Crate"
+	contains = list(/obj/item/clothing/under/vox/vox_uniform,
+					/obj/item/clothing/under/vox/vox_uniform,
+					/obj/item/clothing/under/vox/vox_uniform,
+					/obj/item/clothing/under/vox/vox_uniform,)
+	cost = 10
+	containertype = /obj/structure/closet/crate
+	containername = "Vox Uniform Crate"
+	group = "Hospitality"
+
+/datum/supply_packs/voxinternals
+	name = "Vox Internals Crate"
+	contains = list(/obj/item/weapon/tank/emergency_nitrogen,
+					/obj/item/weapon/tank/emergency_nitrogen,
+					/obj/item/weapon/tank/emergency_nitrogen,
+					/obj/item/weapon/tank/emergency_nitrogen,
+					/obj/item/clothing/mask/breath/vox,
+					/obj/item/clothing/mask/breath/vox,
+					/obj/item/clothing/mask/breath/vox,
+					/obj/item/clothing/mask/breath/vox)
+	cost = 15
+	containertype = /obj/structure/closet/crate/internals
+	containername = "Vox Internals crate"
+	group = "Hospitality"
+
+/datum/supply_packs/shieldgen
+	name = "Shield Generator Pack"
+	contains = list(/obj/machinery/shieldwallgen,
+					/obj/machinery/shieldwallgen)
+	cost = 35
+	containertype = /obj/structure/largecrate
+	containername = "Shield Generator Crate"
+	group = "Engineering"
+
+/datum/supply_packs/eshieldgen
+	name = "Emergency Shield Generator Pack"
+	contains = list(/obj/machinery/shieldgen,
+					/obj/machinery/shieldgen)
+	cost = 35
+	containertype = /obj/structure/largecrate
+	containername = "Emergency Shield Generator Crate"
 	group = "Engineering"
 
 /datum/supply_packs/evacuation
