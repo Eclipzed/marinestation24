@@ -171,6 +171,7 @@
 	species_restricted = list("Vox")
 	vision_flags = SEE_MOBS
 	invisa_view = 2
+	darkness_view = 3
 
 /obj/item/clothing/glasses/thermal
 	name = "Optical Thermal Scanner"
