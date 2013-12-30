@@ -524,6 +524,11 @@ proc/process_ghost_teleport_locs()
 	icon_state = "north"
 	requires_power = 0
 
+/area/vox_station/outpost
+	name = "\improper nanotrasen vox outpost"
+	icon_state = "north"
+	requires_power = 0
+
 //PRISON
 /area/prison
 	name = "\improper Prison Station"
