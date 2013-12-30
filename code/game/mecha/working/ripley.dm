@@ -9,6 +9,7 @@
 	wreckage = /obj/effect/decal/mecha_wreckage/ripley
 	var/list/cargo = new
 	var/cargo_capacity = 15
+	max_equip = 4
 
 /*
 /obj/mecha/working/ripley/New()

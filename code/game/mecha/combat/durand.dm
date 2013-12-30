@@ -14,6 +14,7 @@
 	var/defence = 0
 	var/defence_deflect = 35
 	wreckage = /obj/effect/decal/mecha_wreckage/durand
+	max_equip = 5
 
 /*
 /obj/mecha/combat/durand/New()

@@ -11,6 +11,7 @@
 	deflect_chance = 15
 	step_energy_drain = 6
 	var/obj/item/clothing/glasses/hud/health/mech/hud
+	max_equip = 4
 
 	New()
 		..()

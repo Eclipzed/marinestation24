@@ -20,7 +20,7 @@
 	add_req_access = 0
 	internal_damage_threshold = 25
 	force = 45
-	max_equip = 4
+	max_equip = 5
 
 /obj/mecha/combat/marauder/seraph
 	desc = "Heavy-duty, command-type exosuit. This is a custom model, utilized only by high-ranking military personnel."
@@ -33,7 +33,7 @@
 	wreckage = /obj/effect/decal/mecha_wreckage/seraph
 	internal_damage_threshold = 20
 	force = 55
-	max_equip = 5
+	max_equip = 6
 
 /obj/mecha/combat/marauder/mauler
 	desc = "Heavy-duty, combat exosuit, developed off of the existing Marauder model."
