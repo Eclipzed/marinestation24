@@ -51,6 +51,18 @@
 	thermal_conductivity = 0.025
 	heat_capacity = 325000
 
+/turf/simulated/plating/vox
+	name = "plating"
+	icon_state = "plating"
+	oxygen = 0
+	nitrogen = MOLES_CELLSTANDARD
+
+/turf/simulated/floor/vox/
+	name = "floor"
+	icon_state = "floor"
+	oxygen = 0
+	nitrogen = MOLES_CELLSTANDARD
+
 /turf/simulated/floor/engine/attackby(obj/item/weapon/C as obj, mob/user as mob)
 	if(!C)
 		return
@@ -144,14 +156,14 @@
 	icon_state = "floor4"
 
 /turf/simulated/shuttle/vox/plating
-	name = "Skipjack Plating"
+	name = "plating"
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "plating"
 	oxygen = 0
 	nitrogen = MOLES_CELLSTANDARD
 
 /turf/simulated/shuttle/vox/floor
-	name = "Skipjack Flooring"
+	name = "floor"
 	icon_state = "floor4"
 	oxygen = 0
 	nitrogen = MOLES_CELLSTANDARD
