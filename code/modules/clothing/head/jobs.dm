@@ -28,6 +28,7 @@
 	cold_protection = HEAD
 	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECITON_TEMPERATURE
 	siemens_coefficient = 0.9
+	species_restricted = null
 
 //Chaplain
 /obj/item/clothing/head/chaplain_hood
