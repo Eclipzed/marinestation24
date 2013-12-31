@@ -8,6 +8,17 @@
 	silenced = 1
 	origin_tech = "combat=2;materials=2;syndicate=8"
 	ammo_type = "/obj/item/ammo_casing/c45"
+	
+	
+	
+/obj/item/weapon/gun/projectile/m1911
+	name = "M1911 .45"
+	desc = "A classic M1911 .45 handgun."
+	icon_state = "m1911"
+	w_class = 2
+	max_shells = 8
+	caliber = ".45"
+	ammo_type = "/obj/item/ammo_casing/c45"
 
 
 
